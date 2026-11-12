@@ -472,18 +472,28 @@
     .a4-formula {
       background: #f1f5f9;
       border: 0.8px dashed #64748b;
-      padding: 1.5px 3.5px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: 500;
+      margin: 1px 0;
+      font-size: 5.8pt;
+      line-height: 1.18;
+    }
+    .a4-quad code, .a4-quad .step-pill {
+      background: #0284c7;
+      color: #fff;
+      padding: 0.5px 3.5px;
       border-radius: 2px;
-      font-weight: 600;
-      margin: 0.5px 0;
-      font-size: 5.7pt;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.5pt;
     }
     .a4-list {
       padding-left: 9px;
       margin: 0;
     }
     .a4-list li {
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
     .hl-yellow { background: #fef08a; padding: 0 2px; border-radius: 2px; font-weight: 700; }
     .hl-green { background: #bbf7d0; padding: 0 2px; border-radius: 2px; font-weight: 700; }
@@ -2262,9 +2272,9 @@
 
   <div class="a4-controls no-print">
     <div>
-      <h3 style="margin-bottom:4px;">📄 Mapa de Transcrição para 1 Folha A4 (Frente e Verso)</h3>
+      <h3 style="margin-bottom:4px;">📄 Folha A4 Prática de Prova (Frente e Verso) — Fórmulas Nomeadas, Roteiros de Exercícios & Variáveis Diretas</h3>
       <p style="font-size:0.86rem; color:var(--text-muted);">
-        Dica de ouro: Dobre sua folha A4 suavemente ao meio na vertical e na horizontal para criar <strong>4 quadrantes na Frente</strong> e <strong>4 quadrantes no Verso</strong>. Cada caixa abaixo corresponde exatamente a 1 quadrante real e já está dimensionada para caber na sua letra!
+        Versão enxuta e orientada à execução rápida na prova: cada quadrante traz <strong>(1) Fórmulas com seus nomes</strong>, <strong>(2) Passo a Passo de Resolução do Exercício</strong> e <strong>(3) Variáveis diretas + Justificativas prontas</strong> (sem tabelas gigantes desnecessárias).
       </p>
     </div>
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
@@ -2276,337 +2286,243 @@
   <div class="a4-wrapper">
 
     <!-- ===============================================================
-         PÁGINA 1 DA FOLHA A4 — FRENTE (4 QUADRANTES)
+         PÁGINA 1 DA FOLHA A4 — FRENTE (QUADRANTES Q1 A Q4)
          =============================================================== -->
     <div class="a4-page" id="a4-frente">
       <div class="a4-banner">
-        <span>FOLHA DE CONSULTA A4 — FRENTE (SANEAMENTO AMBIENTAL II • TRATAMENTO DE ESGOTOS)</span>
-        <span>DIVIDA SUA FOLHA EM 4 QUADRANTES (Q1 a Q4)</span>
+        <span>FOLHA A4 — FRENTE: FÓRMULAS NOMEADAS, ROTEIROS PASSO A PASSO & VARIÁVEIS DIRETAS</span>
+        <span>Q1 (CARGA/RIO) • Q2 (PRELIMINAR/PRIMÁRIO) • Q3 (SÉPTICO/FILTRO) • Q4 (UASB)</span>
       </div>
 
-      <!-- QUADRANTE 1 (FRENTE SUPERIOR ESQUERDO): CARACTERIZAÇÃO + AUTODEPURAÇÃO + MATRIZ COMPARATIVA -->
+      <!-- QUADRANTE 1: CARACTERIZAÇÃO, VAZÕES, CARGAS E STREETER-PHELPS -->
       <div class="a4-quad">
         <div class="a4-quad-title">
-          <span>Q1. CARACTERIZAÇÃO, STREETER-PHELPS & MATRIZ COMPARATIVA</span>
-          <span>Frente • Sup. Esq.</span>
+          <span>Q1. VAZÕES, CARGA ORGÂNICA & STREETER-PHELPS (AUTODEPURAÇÃO)</span>
+          <span>Frente • Q1</span>
         </div>
         <div class="a4-formula">
-          <strong>Carga:</strong> $W = Q \cdot C \ [\text{kg/d} = \frac{Q(\text{L/s})\cdot C(\text{mg/L})\cdot 86,4}{1000} = \frac{Q(\text{m}^3/\text{d})\cdot C(\text{mg/L})}{1000}]$ | $1\text{ mg/L} = 1\text{ g/m}^3$<br>
-          <strong>Pop. Equiv.:</strong> $PE = \frac{W_{\text{total}}}{54\text{ g DBO/(hab}\cdot\text{d)}}$ | $PHE = \frac{Q_{\text{tot}}}{q}$ | $Q_{\text{esg}} \approx 0,8 \cdot Q_{\text{água}}$ | $P_f = P_i(1+r)^n$<br>
-          <strong>Vazões:</strong> $Q_{\text{méd}} = \frac{P \cdot q}{86400}$; $Q_{\text{máx,d}} = k_1 Q_{\text{méd}} \ (1,2)$; $Q_{\text{máx,h}} = k_2 Q_{\text{méd}} \ (1,5)$; $Q_{\text{máx}} = k_1 k_2 Q_{\text{méd}} \ (1,8)$; $Q_{\text{mín}} = 0,5 Q_{\text{méd}}$
+          <strong>📐 Fórmulas com Nomes:</strong><br>
+          • <strong>População Geométrica:</strong> $P_f = P_i \cdot (1 + r)^n$ &nbsp;|&nbsp; <strong>Vazão Média:</strong> $\bar{Q} = \frac{P \cdot q \cdot R}{86400}\text{ [L/s]}$ ($R=0,8$ se dado consumo de água; $R=1$ se já for contribuição de esgoto)<br>
+          • <strong>Vazões Extremas:</strong> $Q_{\text{máx,d}} = k_1\bar{Q}\ (1,2)$ &nbsp;|&nbsp; $Q_{\text{máx,h}} = k_2\bar{Q}\ (1,5)$ &nbsp;|&nbsp; $Q_{\text{máx}} = k_1 k_2\bar{Q}\ (1,8)$ &nbsp;|&nbsp; $Q_{\text{mín}} = 0,5\bar{Q}$ &nbsp;|&nbsp; <em>Conversão:</em> $\text{m}^3/\text{h} = \text{L/s}\times 3,6$ ; $\text{m}^3/\text{d} = \text{L/s}\times 86,4$<br>
+          • <strong>Carga Orgânica ($W$) e Concentração ($C$):</strong> <span class="hl-yellow">$W\text{ [kg/d]} = \frac{Q(\text{m}^3/\text{d}) \cdot C(\text{mg/L})}{1000} = Q(\text{L/s})\cdot C(\text{mg/L})\cdot 0,0864$</span> &nbsp;|&nbsp; $C = \frac{W}{Q}$ ($1\text{ mg/L} = 1\text{ g/m}^3$)<br>
+          • <strong>População Equivalente ($PE$):</strong> $PE = \frac{W_{\text{total (g DBO/d)}}}{54\text{ g DBO/(hab}\cdot\text{d)}}$ &nbsp;|&nbsp; <strong>Pop. Hidráulica Equiv.:</strong> $PHE = \frac{Q_{\text{total}}}{q_{\text{per capita}}}$<br>
+          • <strong>Concentração de Mistura no Rio ($x=0$):</strong> <span class="hl-green">$C_0 = C_m = \frac{Q_r C_r + Q_e C_e}{Q_r + Q_e}$</span> &nbsp;(idem p/ Temperatura de mistura $T_m$)<br>
+          • <strong>Decaimento da DBO no Rio (Streeter-Phelps):</strong> <span class="hl-yellow">$C(t) = C_0 \cdot e^{-(k_{1,T} + k_s)\cdot t}$</span> &nbsp;onde $t = \frac{x}{U}\text{ [d]}$, $k_s = \frac{v_s}{h}\text{ [d}^{-1}]$ e $k_{1,T} = k_{1,20}\cdot 1,047^{(T - 20)}$<br>
+          • <strong>Eficiência de Remoção ($E$):</strong> $E = \frac{C_{\text{in}} - C_{\text{out}}}{C_{\text{in}}}$ &nbsp;$\implies C_{\text{out}} = C_{\text{in}}\cdot(1 - E)$
         </div>
         <ul class="a4-list">
-          <li><strong>Esgoto Bruto Típico (Von Sperling):</strong> $99,92\%$ água, $0,08\%$ sólidos. $\text{DBO}_5$: $200\text{--}500$ (<span class="hl-yellow">típ. $350\text{ mg/L}$</span>; $54\text{ g/hab.d}$); $\text{DQO}$: $400\text{--}800$ (<span class="hl-yellow">típ. $700\text{ mg/L}$</span>; $100\text{ g/hab.d}$); $N_{\text{tot}}$: $35\text{--}70$ (típ. $50\text{ mg/L}$; $8\text{ g/hab.d}$); $P_{\text{tot}}$: $5\text{--}25$ (típ. $14\text{ mg/L}$; $2,5\text{ g/hab.d}$); $CF$: $4\times 10^7\text{ org/100mL}$. <strong>Água cinza (75% vol):</strong> sem fezes/urina (reúso). <strong>Água negra (25% vol):</strong> marrom (fezes $50\text{ L/ano}$) + amarela (urina $500\text{ L/ano}$, rica em N/P $\to$ estruvita).</li>
-          <li><strong>Respiração (Ordem de preferência e $\downarrow$ produção de lodo):</strong> 1º Aeróbia ($\text{O}_2$, $\uparrow\uparrow$ lodo: $50\text{--}60\%$ da DQO vira lodo) $\to$ 2º Anóxica ($\text{NO}_3^- \to \text{N}_2$, desnitrificação) $\to$ 3º Anaeróbia Dessulfatação ($\text{SO}_4^{2-} \to \text{H}_2\text{S}$, mau odor!) $\to$ 4º Metanogênese ($\text{CO}_2/\text{CH}_3\text{COOH} \to \text{CH}_4$, $70\text{--}90\%$ vira biogás e só $5\text{--}15\%$ vira lodo estabilizado!).</li>
-          <li><strong>Streeter-Phelps (Mistura + Decaimento no Rio):</strong> $C_0 = \frac{Q_r C_r + Q_e C_e}{Q_r + Q_e}$; $C(t) = C_0 \cdot e^{-(k_{1,T} + k_s)t}$ onde $t = \frac{x}{U}$, $k_s = \frac{v_s}{h}$ e $k_{1,T} = k_{1,20}\cdot 1,047^{(T-20)}$. <strong>CONAMA 357 (Classe 2):</strong> $\text{DBO} \le 5\text{ mg/L}$, $\text{OD} \ge 5\text{ mg/L}$. <strong>CONAMA 430:</strong> $\text{DBO} \le 120\text{ mg/L}$ ou $E \ge 60\%$.</li>
+          <li><strong>🧭 Roteiro Exercício de Carga & Concentração:</strong>
+            <br><code>Passo 1:</code> Calcular $Q = P \cdot q$ (em $\text{L/d}$ ou $\text{m}^3/\text{d}$). <code>Passo 2:</code> Calcular $W = P \cdot 54\text{ g/d}$ ($\div 1000 \to \text{kg/d}$). <code>Passo 3:</code> Achar $C = W / Q$ (se $q$ for muito alto, ex. $300\text{ L/d}$, o esgoto fica diluído $C=180\text{ mg/L}$, mas a carga $W$ a tratar é a mesma!).
+          </li>
+          <li><strong>🧭 Roteiro Exercício Streeter-Phelps & Enquadramento CONAMA:</strong>
+            <br><code>Passo 1:</code> Converter $Q_e$ p/ $\text{m}^3/\text{s}$ e calcular $C_0$ e $T_m$ na mistura ($x=0$). Comparar $C_0$ com o limite da <strong>Classe 2 CONAMA 357/05 ($\text{DBO} \le 5\text{ mg/L}$, $\text{OD} \ge 5\text{ mg/L}$)</strong>. Se $C_0 &gt; 5\text{ mg/L} \to$ não atende!
+            <br><code>Passo 2:</code> Corrigir $k_{1,T} = k_{1,20}\cdot 1,047^{(T_m - 20)}$, somar $k_r = k_{1,T} + k_s$, converter velocidade do rio $U$ p/ $\text{km/d}$ ($\text{m/s}\times 86,4$) e montar $C(x) = C_0 \cdot e^{-k_r \cdot (x / U)}$.
+            <br><code>Passo 3 (Eficiência exigida da ETE):</code> Fixar $C_m = 5\text{ mg/L}$ na equação da mistura: $5 = \frac{Q_r C_r + Q_e \cdot C_{e,\text{trat}}}{Q_r + Q_e} \to$ isolar $C_{e,\text{trat}}$ admissível $\to$ calcular $E = \frac{C_{e,\text{bruto}} - C_{e,\text{trat}}}{C_{e,\text{bruto}}}$.
+          </li>
+          <li><strong>🎯 Variáveis Diretas & Conceitos:</strong> Esgoto bruto típico: $\text{DBO}_5 = \mathbf{350\text{ mg/L}}$ ($54\text{ g/hab.d}$); $\text{DQO} = \mathbf{700\text{ mg/L}}$ ($100\text{ g/hab.d}$; mede MO biodegradável + inerte, teste 2–3h); $N_{\text{tot}} = 50\text{ mg/L}$; $P_{\text{tot}} = 14\text{ mg/L}$; $CF = 4\cdot 10^7\text{ org/100mL}$. <strong>CONAMA 430/11 (Lançamento):</strong> $\text{DBO} \le 120\text{ mg/L}$ ou $E \ge 60\%$. <strong>Água cinza (75% vol):</strong> sem vaso/cozinha (reúso). <strong>Água negra (25% vol):</strong> marrom (fezes $\to$ biogás) + amarela (urina $\to$ N e P/estruvita).</li>
+          <li><strong>Ordem de Respiração ($\downarrow$ produção de lodo):</strong> 1º Aeróbia ($\text{O}_2 \to 50\text{--}60\%$ da DQO vira lodo!) $\to$ 2º Anóxica ($\text{NO}_3^- \to \text{N}_2$, desnitrificação) $\to$ 3º Dessulfatação ($\text{SO}_4^{2-} \to \text{H}_2\text{S}$, mau cheiro!) $\to$ 4º Metanogênese ($\text{CO}_2 \to \text{CH}_4$, $70\text{--}90\%$ vira biogás e só $5\text{--}15\%$ vira lodo já estabilizado!).</li>
         </ul>
-        <table>
-          <thead>
-            <tr>
-              <th>Sistema</th>
-              <th>DBO%</th>
-              <th>N / P (%)</th>
-              <th>CF (%)</th>
-              <th>Área ($m^2$/h)</th>
-              <th>Pot.(W/h)</th>
-              <th>TDH (d)</th>
-              <th>Características / Quando escolher</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Preliminar</strong></td><td>0–5</td><td>~0 / ~0</td><td>~0</td><td>&lt;0,001</td><td>~0</td><td>seg/min</td><td>Protege bombas/tubos (grosseiros e areia).</td></tr>
-            <tr><td><strong>Dec. Primário</strong></td><td>25–40</td><td>10–25/10–20</td><td>30–40</td><td>0,03–0,05</td><td>~0</td><td>1 a 3 h</td><td>Remove SST (40–60%). Gera lodo cru instável.</td></tr>
-            <tr><td><strong>TS + Filtro An.</strong></td><td>70–90</td><td>10–25/10–20</td><td>60–90</td><td>0,2–0,4</td><td>~0</td><td>1,0–2,0</td><td>Descentralizado ($\le 12\text{ m}^3/\text{d}$), sem rede.</td></tr>
-            <tr><td><strong>Lagoa Facult.</strong></td><td>70–85</td><td>30–50/20–60</td><td>60–99</td><td><strong>2,0–5,0</strong></td><td>~0</td><td>15–45</td><td>Simples, zero energia, exige muita área e sol.</td></tr>
-            <tr><td><strong>LA + LF (+LM)</strong></td><td>70–90</td><td>30–50/20–60</td><td>60–99,99</td><td><strong>1,5–3,5</strong></td><td>~0</td><td>12–24</td><td>Sistema Australiano: economiza 30% de área!</td></tr>
-            <tr><td><strong>UASB (RAFA)</strong></td><td>60–80</td><td>10–25/10–20</td><td>60–90</td><td><strong>0,05–0,10</strong></td><td>~0</td><td>6 a 10 h</td><td>Compacto, gera biogás, lodo estabilizado; pede pós-trat.</td></tr>
-            <tr><td><strong>LA Convenc.</strong></td><td>85–93</td><td>30–40/30–45</td><td>60–90</td><td>0,2–0,3</td><td>1,5–2,8</td><td>4–6 h</td><td>Pouca área, alta efic.; exige DP e digestor de lodo.</td></tr>
-            <tr><td><strong>LA Aer. Prol.</strong></td><td><strong>93–98</strong></td><td>15–30/10–20</td><td>65–90</td><td>0,25–0,35</td><td><strong>2,5–4,0</strong></td><td>8–24 h</td><td>Lodo sai estabilizado ($\theta_c&gt;18\text{d}$); sem DP; alto gasto energ.</td></tr>
-            <tr><td><strong>Wetlands</strong></td><td>80–95</td><td>30–80/20–70</td><td>90–99,5</td><td>0,8–5,0</td><td>~0</td><td>0,5–15</td><td>Pós-TS/UASB; paisagístico; híbrido FV+FH nitrif./desnitrif.</td></tr>
-          </tbody>
-        </table>
       </div>
 
-      <!-- QUADRANTE 2 (FRENTE SUPERIOR DIREITO): TRATAMENTO PRELIMINAR & DECANTADOR PRIMÁRIO -->
+      <!-- QUADRANTE 2: TRATAMENTO PRELIMINAR & DECANTADOR PRIMÁRIO -->
       <div class="a4-quad">
         <div class="a4-quad-title">
-          <span>Q2. PRELIMINAR & DECANTADOR PRIMÁRIO (NBR 12209/2011)</span>
-          <span>Frente • Sup. Dir.</span>
+          <span>Q2. TRATAMENTO PRELIMINAR & DECANTADOR PRIMÁRIO (NBR 12209/11)</span>
+          <span>Frente • Q2</span>
         </div>
         <div class="a4-formula">
-          <strong>Ordem Preliminar:</strong> 1º Calha Parshall ($H_p = K \cdot Q^n$) $\to$ 2º Degrau $z = \frac{Q_{\text{máx},f} H_{p,\text{mín}} - Q_{\text{mín},i} H_{p,\text{máx}}}{Q_{\text{máx},f} - Q_{\text{mín},i}}$ $\to$ 3º Caixa de Areia ($H = H_p - z$) $\to$ 4º Grade. <em>(Mantém $v_h$ constante entre $Q_{\text{mín},i}$ e $Q_{\text{máx},f}$!)</em>
+          <strong>📐 Fórmulas Preliminar:</strong><br>
+          • <strong>Curva da Calha Parshall:</strong> $H_p = K \cdot Q^n$ ($Q$ em $\text{m}^3/\text{s}$, $H_p$ em m) &nbsp;|&nbsp; <strong>Degrau Rebaixo ($z$):</strong> <span class="hl-yellow">$z = \frac{Q_{\text{máx},f}\cdot H_{p,\text{mín}} - Q_{\text{mín},i}\cdot H_{p,\text{máx}}}{Q_{\text{máx},f} - Q_{\text{mín},i}}$</span> &nbsp;|&nbsp; <strong>Lâmina Areia:</strong> $H = H_p - z$<br>
+          • <strong>Desarenador (Caixa de Areia):</strong> Largura $B = \frac{Q_{\text{máx},f}}{v_h \cdot H_{\text{máx}}}$ &nbsp;|&nbsp; Comprimento $L = 1,5 \cdot \frac{v_h}{v_{s,c}} \cdot H_{\text{máx}} \approx \mathbf{30 \cdot H_{\text{máx}}}$ &nbsp;|&nbsp; $\text{TAS} = \frac{Q_{\text{máx},f}}{B \cdot L}$<br>
+          <strong>📐 Fórmulas Decantador Primário (DP):</strong><br>
+          • <strong>Área por TAS:</strong> <span class="hl-green">$A = \frac{Q_{\text{proj}}}{\text{TAS}}$</span> &nbsp;|&nbsp; <strong>Diâmetro Circular:</strong> $D = \sqrt{\frac{4 \cdot A_{\text{unit}}}{\pi}}$ &nbsp;|&nbsp; <strong>Tempo Detenção:</strong> $\theta_H = \frac{V}{Q}$ &nbsp;|&nbsp; <strong>Taxa no Vertedor:</strong> $q_L = \frac{Q_{\text{máx}}}{\pi \cdot D \cdot n_{\text{unid}}}$
         </div>
         <ul class="a4-list">
-          <li><strong>1. Gradeamento (Remoção de Sólidos Grosseiros):</strong>
-            <br>• Espaçamento $e$: Grossa ($4\text{--}10\text{ cm}$, usual $7,5\text{ cm}$), Média ($2\text{--}4\text{ cm}$, usual $2,5\text{ cm}$), Fina ($1\text{--}2\text{ cm}$), Peneira ($0,25\text{--}10\text{ mm}$).
-            <br>• Inclinação $\theta$ c/ horizontal: <strong>Manual: $45^\circ\text{ a }60^\circ$</strong> | <strong>Mecanizada: $60^\circ\text{ a }90^\circ$</strong> ($70^\circ\text{--}85^\circ$ melhor limpeza).
-            <br>• <strong>NBR 12209:</strong> Mecanizar obrigatoriamente quando <span class="hl-yellow">$Q_{\text{máx},f} \ge 100\text{ L/s}$</span> ou canal profundo. Retenção média: $0,04\text{ L/m}^3$ ($\to$ aterro).
+          <li><strong>🧭 Roteiro Tratamento Preliminar (Ordem Obrigatória: Parshall $\to$ Degrau $z$ $\to$ Areia $\to$ Grade):</strong>
+            <br><code>Passo 1 (Parshall e z):</code> Usar $Q_{\text{mín},i}$ (1ª etapa) e $Q_{\text{máx},f}$ (fim de plano) em $\text{m}^3/\text{s}$. Escolher Parshall: <strong>$6''$ ($W=0,15\text{m}: K=1,842; n=0,636$)</strong> ou <strong>$9''$ ($W=0,229\text{m}: K=1,486; n=0,633$)</strong>. Calcular $H_{p,\text{mín}}$, $H_{p,\text{máx}}$, o degrau $z$ e a lâmina máxima $H_{\text{máx}} = H_{p,\text{máx}} - z$. <em>(Justificativa: o degrau $z$ mantém $v_h$ constante na caixa de areia!)</em>
+            <br><code>Passo 2 (Caixa de Areia — Sedimentação Discreta):</code> Partícula-alvo $d \ge 0,2\text{ mm} \implies v_{s,c} = \mathbf{0,021\text{ m/s}}$. Adotar velocidade horizontal <span class="hl-yellow">$v_h = \mathbf{0,30\text{ m/s}}$ (faixa NBR: $0,25\text{ a }0,40\text{ m/s}$)</span>. Calcular $B$ (mín. $0,60\text{ m}$ p/ $H_{\text{tot}}&lt;1\text{m}$ ou $0,90\text{ m}$ p/ $1\text{--}2\text{m}$) e $L = 1,5(v_h/v_{s,c})H_{\text{máx}}$. Checar $L/B \ge 3\text{ a }4$ e <span class="hl-yellow">$\text{TAS} \in [600, 1300]\text{ m}^3/(\text{m}^2\cdot\text{d)}$</span> (s/ DP: $\le 1000$).
+            <br><code>Passo 3 (Grade):</code> Se $Q_{\text{máx},f} &lt; 100\text{ L/s} \to$ <strong>Limpeza Manual ($\theta = 45^\circ\text{--}60^\circ$)</strong>; se $Q_{\text{máx},f} \ge 100\text{ L/s} \to$ <strong>Mecanizada obrigatória ($\theta = 60^\circ\text{--}90^\circ$)</strong>. Espaçamento: Grossa ($4\text{--}10\text{ cm}$), Média ($2\text{--}4\text{ cm}$, usual $2,5\text{ cm}$, retém $0,04\text{ L/m}^3$), Fina ($1\text{--}2\text{ cm}$).
           </li>
-          <li><strong>2. Caixa de Areia / Desarenador (Sedimentação Discreta — Lei de Stokes):</strong>
-            <br>• Partícula-alvo NBR 12209: diâmetro <span class="hl-yellow">$d \ge 0,2\text{ mm}$</span>, dens. $2,65\text{ g/cm}^3 \implies v_{s,c} = \mathbf{0,021\text{ m/s}}$ ($2,1\text{ a }2,4\text{ cm/s}$).
-            <br>• Velocidade longitudinal: <span class="hl-green">$v_h = 0,25\text{ a }0,40\text{ m/s}$</span> (ideal $0,30\text{ m/s}$). <em>Justificativa: Se $v_h &lt; 0,25\text{ m/s}$, sedimenta MO junto com a areia (mau cheiro); se $v_h &gt; 0,40\text{ m/s}$, arrasta a areia para as bombas/reatores!</em>
-            <br>• Largura: $B = \frac{Q_{\text{máx},f}}{v_h \cdot H_{\text{máx}}}$ ($B \ge 0,50\text{ m}$; Tabela altura total: $&lt;1\text{m}\to 0,6\text{m}$; $1\text{--}2\text{m}\to 0,9\text{m}$; $2\text{--}4\text{m}\to 1,2\text{m}$).
-            <br>• Comprimento (c/ fator seg. $\ge 1,5$ p/ turbulência): $L = 1,5 \cdot \frac{v_h}{v_s} \cdot h \implies$ p/ $v_h=0,4$ e $v_s=0,02$, <span class="hl-yellow">$L = 30 \cdot H_{\text{máx}}$</span>. Relação $L/B \ge 3\text{ a }4$ (evitar curto-circuito).
-            <br>• <strong>TAS (p/ $Q_{\text{máx}}$):</strong> <span class="hl-yellow">$600\text{ a }1300\text{ m}^3/(\text{m}^2\cdot\text{d)}$</span> (sem decantador primário, limite superior recomendado $\le 1000\text{ m}^3/(\text{m}^2\cdot\text{d)}$).
-            <br>• <strong>Parshall ($Q$ em $\text{m}^3/\text{s}$, $H_p$ em m):</strong> $3''(K=3,704; n=0,646)$ | $6''(W=0,15\text{m}; K=1,842; n=0,636)$ | $9''(W=0,229\text{m}; K=1,486; n=0,633)$ | $1'(W=0,305\text{m}; K=1,276; n=0,657)$. Vantagens: baixa perda de carga e autolimpante.
-          </li>
-          <li><strong>3. Decantador Primário (DP — Sedimentação Floculenta):</strong>
-            <br>• Eficiência: remove <strong>$25\text{--}35\%$ de DBO</strong> e <strong>$40\text{--}60\%$ de SST</strong>. <strong>Vazão de projeto (6.3.1):</strong> <span class="hl-yellow">$Q_{\text{máx,horária}}$</span> ($+ Q_{\text{recirc}}$ se FBP). Se $Q &gt; 250\text{ L/s} \implies \ge 2$ unidades.
-            <br>• <strong>TAS $= Q / A$ (6.3.2):</strong> DP $\to$ Filtro Biológico: <span class="hl-yellow">$\text{TAS} \le 60\text{ m}^3/(\text{m}^2\cdot\text{d)}$</span> | DP $\to$ Lodos Ativados ou CEPT: <span class="hl-yellow">$\text{TAS} \le 90\text{ m}^3/(\text{m}^2\cdot\text{d)}$</span>.
-            <br>• <strong>Tempo de Detenção $\theta_H = V / Q$ (6.3.4):</strong> Para $Q_{\text{média}}$: <span class="hl-red">$\theta_H &lt; 3\text{ h}$</span> (evitar septicidade/gás/odor!) | Para $Q_{\text{máx}}$: <span class="hl-green">$\theta_H &gt; 1\text{ h}$</span>.
-            <br>• <strong>Taxa no vertedor de saída (6.3.5):</strong> $q_L = \frac{Q_{\text{máx}}}{L_{\text{vertedor}}} \le \mathbf{500\text{ m}^3/(\text{m}\cdot\text{d)}}$.
-            <br>• <strong>DP sem remoção mecanizada (6.3.9):</strong> Circular/quadrado com <span class="hl-yellow">$D \le 7,0\text{ m}$</span>, parede lateral $H_{\text{cil}} \ge 0,50\text{ m}$, poço de lodo cônico com inclinação $\ge 1,5\text{V}:1\text{H}$ e fundo $\ge 0,60\text{ m}$. Volume útil: $V_{\text{útil}} = V_{\text{cil}} + V_{1/3\text{ sup. do cone}}$.
-            <br>• <strong>Tendência atual:</strong> Substituir DP por <strong>UASB</strong> (eleva remoção de DBO de $30\%$ p/ $70\%$, reduz reator aeróbio a jusante, economiza energia e já estabiliza o lodo!).
+          <li><strong>🧭 Roteiro Decantador Primário (Sedimentação Floculenta — Remove 25–35% DBO e 40–60% SST):</strong>
+            <br><code>Passo 1 (Área):</code> Vazão de projeto NBR 12209 (6.3.1): <span class="hl-yellow">$Q_{\text{máx,h}}$</span> (ou $Q_{\text{máx}}$). Adotar <strong>$\text{TAS} \le 90\text{ m}^3/(\text{m}^2\cdot\text{d)}$</strong> (antes de Lodos Ativados ou CEPT) ou <strong>$\text{TAS} \le 60\text{ m}^3/(\text{m}^2\cdot\text{d)}$</strong> (antes de Filtro Biológico). Calcular $A_{\text{tot}} = Q / \text{TAS}$.
+            <br><code>Passo 2 (Diâmetro e Nº de Tanques):</code> Adotar $n \ge 2$ tanques (obrigatório se $Q &gt; 250\text{ L/s}$). Se for <strong>sem remoção mecanizada (descarga hidráulica de lodo)</strong>: diâmetro máximo <span class="hl-yellow">$D \le 7,0\text{ m}$</span>, parede cilíndrica $H_{\text{cil}} \ge 0,50\text{ m}$ e poço cônico com inclinação $\ge 1,5\text{V}:1\text{H}$ (base $0,60\text{ m}$; volume útil = cilindro $+ 1/3$ sup. do cone).
+            <br><code>Passo 3 (Altura e Verificações):</code> Escolher $H$ tal que <span class="hl-green">$\theta_H(Q_{\text{máx}}) &gt; 1,0\text{ h}$</span> (garantir decantação) e <span class="hl-red">$\theta_H(Q_{\text{méd}}) &lt; 3,0\text{ h}$</span> (evitar septicidade/gás/odor!). Checar vertedor: $q_L \le 500\text{ m}^3/(\text{m}\cdot\text{d)}$.
           </li>
         </ul>
       </div>
 
-      <!-- QUADRANTE 3 (FRENTE INFERIOR ESQUERDO): TANQUE SÉPTICO & FILTRO ANAERÓBIO (NBR 17076/24) -->
+      <!-- QUADRANTE 3: TANQUE SÉPTICO & FILTRO ANAERÓBIO (NBR 17076/2024) -->
       <div class="a4-quad">
         <div class="a4-quad-title">
           <span>Q3. TANQUE SÉPTICO & FILTRO ANAERÓBIO (NBR 17076/2024)</span>
-          <span>Frente • Inf. Esq.</span>
+          <span>Frente • Q3</span>
         </div>
         <div class="a4-formula">
-          <strong>Limite NBR 17076/24:</strong> $Q_{\text{máx}} \le \mathbf{12.000\text{ L/d}}$ (equiv. a 75 hab alto padrão, 90 médio ou 120 baixo).<br>
-          <strong>Volume Útil Tanque Séptico:</strong> <span class="hl-yellow">$V = 1000 + N \cdot (q \cdot T_d + K \cdot L_f)$</span> [em Litros] ($V_{\text{mín}} = 1000\text{ L}$)<br>
-          <strong>Volume Útil Filtro Anaeróbio:</strong> <span class="hl-green">$V_u = I_v \cdot N \cdot q \cdot T_d$</span> [em Litros, com $I_v = \mathbf{1,6}$ e $V_{u,\text{mín}} = 1000\text{ L}$]
+          <strong>📐 Fórmulas com Nomes (Sistemas de Pequeno Porte: $Q \le \mathbf{12.000\text{ L/d}}$):</strong><br>
+          • <strong>1. Vazão Diária Total:</strong> $Q = N \cdot q\text{ [L/d]}$ &nbsp;(onde $N =$ nº total de pessoas contribuintes)<br>
+          • <strong>2. Volume Útil do Tanque Séptico (Decanto-Digestor):</strong> <span class="hl-yellow">$V_{\text{TS}} = 1000 + N \cdot (q \cdot T_d + K \cdot L_f)\text{ [em Litros]}$</span> &nbsp;($V_{\text{mín}} = 1000\text{ L}$)<br>
+          • <strong>3. Volume Útil do Filtro Anaeróbio (Biofilme Ascendente):</strong> <span class="hl-green">$V_{u,\text{FA}} = I_v \cdot N \cdot q \cdot T_d\text{ [em Litros]}$</span> &nbsp;(com $I_v = \mathbf{1,6}$ e $V_{u,\text{mín}} = 1000\text{ L}$)<br>
+          • <strong>4. Altura Total do Filtro Anaeróbio:</strong> $H_{\text{total}} = h_{\text{útil}} + h_1\text{ (calha)} + h_2\text{ (borda)}$ &nbsp;(com $h_{\text{meio+fundo falso}} = 1,20\text{ a }3,0\text{ m}$ e $h_{\text{fundo falso}} \le 0,60\text{ m}$)
         </div>
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:3px;">
-          <table>
-            <thead><tr><th>Prédio / Ocupante</th><th>$q$ (L/d)</th><th>$L_f$ (L/d)</th></tr></thead>
-            <tbody>
-              <tr><td>Resid. Alto Padrão</td><td><strong>160</strong></td><td><strong>1,0</strong></td></tr>
-              <tr><td>Resid. Médio Padrão</td><td><strong>130</strong></td><td><strong>1,0</strong></td></tr>
-              <tr><td>Resid. Baixo / Hotel</td><td><strong>100</strong></td><td><strong>1,0</strong></td></tr>
-              <tr><td>Alojamento provisório</td><td>80</td><td>1,0</td></tr>
-              <tr><td>Fábrica em geral</td><td>70</td><td>0,30</td></tr>
-              <tr><td>Escritório / Escola</td><td>50</td><td>0,20</td></tr>
-              <tr><td>Restaurante / Bar</td><td>25 / 6</td><td>0,10</td></tr>
-            </tbody>
-          </table>
-          <table>
-            <thead><tr><th>Vazão Diária (L/d)</th><th>$T_d$ TS (d | h)</th><th>$T_d$ Filtro ($&lt;15^\circ | 15\text{--}25^\circ | &gt;25^\circ$)</th></tr></thead>
-            <tbody>
-              <tr><td>Até 1.500</td><td>1,00 (24h)</td><td>1,17 | 1,00 | 0,92</td></tr>
-              <tr><td>1.501 a 3.000</td><td>0,92 (22h)</td><td>1,08 | 0,92 | 0,83</td></tr>
-              <tr><td>3.001 a 4.500</td><td>0,83 (20h)</td><td>1,00 | 0,83 | 0,75</td></tr>
-              <tr><td>4.501 a 6.000</td><td>0,75 (18h)</td><td>0,92 | 0,75 | 0,67</td></tr>
-              <tr><td><strong>6.001 a 7.500</strong></td><td><strong>0,67 (16h)</strong></td><td><strong>0,83 | 0,67 | 0,58</strong></td></tr>
-              <tr><td>7.501 a 9.000</td><td>0,58 (14h)</td><td>0,75 | 0,58 | 0,50</td></tr>
-              <tr><td>9.001 a 12.000</td><td>0,50 (12h)</td><td>0,75 | 0,50 | 0,50</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Limpeza (anos)</th>
-              <th>$K$ ($t \le 10^\circ\text{C}$)</th>
-              <th>$K$ ($10 \le t \le 20^\circ\text{C}$)</th>
-              <th>$K$ ($t &gt; 20^\circ\text{C}$)</th>
-              <th>Volume Útil TS ($m^3$)</th>
-              <th>$H_{\text{útil,mín}}$ (m)</th>
-              <th>$H_{\text{útil,máx}}$ (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1 ano</td><td>94</td><td>65</td><td>57</td><td>Até $6,0\text{ m}^3$</td><td>1,20 m</td><td>2,20 m</td></tr>
-            <tr><td><strong>2 anos</strong></td><td>134</td><td><strong>105</strong></td><td>97</td><td><strong>$6,0\text{ a }10,0\text{ m}^3$</strong></td><td><strong>1,50 m</strong></td><td><strong>2,50 m</strong></td></tr>
-            <tr><td>3 / 4 / 5 anos</td><td>174 / 214 / 254</td><td>145 / 185 / 225</td><td>137 / 177 / 217</td><td>Mais que $10,0\text{ m}^3$</td><td>1,80 m</td><td>2,80 m</td></tr>
-          </tbody>
-        </table>
         <ul class="a4-list">
-          <li><strong>Geometria TS:</strong> Prismático: relação $2,0 \le C/L \le 4,0$ e largura mín. $L \ge 0,80\text{ m}$. Cilíndrico: diâmetro mín. $D \ge 1,10\text{ m}$. Eficiência TS isolado: $30\text{--}60\%$ DBO e $60\text{--}70\%$ SST.</li>
-          <li><strong>Distâncias mínimas TS:</strong> <strong>1,5 m</strong> (construções, limites de terreno, sumidouros, valas, ramal predial água); <strong>3,0 m</strong> (árvores, rede pública de água); <strong>15,0 m</strong> (poços freáticos e corpos d'água).</li>
-          <li><strong>Filtro Anaeróbio (Fluxo ascendente afogado em meio suporte):</strong> Altura útil (leito + fundo falso) $\ge 1,20\text{ m}$ (e $\le 3,0\text{ m}$); altura do fundo falso $\le 0,60\text{ m}$. Altura total $H = h + h_1(\text{calha}) + h_2(\text{borda})$. Eficiência conjunta TS + Filtro Anaeróbio: $40\text{--}75\%$ DBO (NBR) ou $70\text{--}90\%$ (Von Sperling).</li>
+          <li><strong>🎯 Variáveis Diretas para Substituir nas Fórmulas (Sem precisar de Tabelão):</strong>
+            <br>• <strong>Contribuição por Pessoa ($q$ e $L_f$):</strong> Residência <strong>Alto Padrão: $q = 160\text{ L/d}$</strong> | <strong>Médio: $q = 130\text{ L/d}$</strong> | <strong>Baixo ou Hotel: $q = 100\text{ L/d}$</strong> | Alojamento: $80\text{ L/d}$ (Em todas as residências/hotéis: lodo fresco <span class="hl-yellow">$L_f = \mathbf{1,0\text{ L/(hab}\cdot\text{d)}}$</span>). Escritório/Escola: $q=50, L_f=0,20$ | Fábrica: $q=70, L_f=0,30$ | Restaurante: $q=25, L_f=0,10$.
+            <br>• <strong>Tempo de Detenção $T_d$ no Tanque Séptico (conforme $Q$ total em L/d):</strong> Até $1500\text{ L/d} \to \mathbf{1,00\text{ d}}$ (24h) | $1501\text{--}3000 \to \mathbf{0,92\text{ d}}$ (22h) | $3001\text{--}4500 \to \mathbf{0,83\text{ d}}$ (20h) | $4501\text{--}6000 \to \mathbf{0,75\text{ d}}$ (18h) | <span class="hl-yellow"><strong>$6001\text{--}7500 \to \mathbf{0,67\text{ d}}$ (16h)</strong></span> | $7501\text{--}9000 \to \mathbf{0,58\text{ d}}$ (14h) | $&gt;9000 \to \mathbf{0,50\text{ d}}$ (12h).
+            <br>• <strong>Taxa de Acumulação de Lodo $K$ (dias) por Intervalo de Limpeza (p/ $T\le 10^\circ\text{C} \mid \mathbf{10\le T\le 20^\circ\text{C}} \mid T&gt;20^\circ\text{C}$):</strong>
+            <br>&nbsp;&nbsp;– Limpeza <strong>1 ano:</strong> $94 \mid \mathbf{65} \mid 57$ &nbsp;|&nbsp; Limpeza <strong>2 anos:</strong> $134 \mid$ <span class="hl-yellow">$\mathbf{105}$</span> $\mid 97$ &nbsp;|&nbsp; Limpeza <strong>3 anos:</strong> $174 \mid \mathbf{145} \mid 137$ &nbsp;|&nbsp; <strong>4 anos:</strong> $214 \mid 185 \mid 177$ &nbsp;|&nbsp; <strong>5 anos:</strong> $254 \mid 225 \mid 217$.
+            <br>• <strong>Tempo de Detenção $T_d$ no Filtro Anaeróbio (p/ $T&lt;15^\circ\text{C} \mid 15\text{--}25^\circ\text{C} \mid &gt;25^\circ\text{C}$):</strong> Até $1500\text{ L/d}: 1,17\mid 1,00\mid 0,92$ ; $1501\text{--}3000: 1,08\mid 0,92\mid 0,83$ ; $3001\text{--}4500: 1,00\mid 0,83\mid 0,75$ ; $4501\text{--}6000: 0,92\mid 0,75\mid 0,67$ ; <span class="hl-green"><strong>$6001\text{--}7500: \mathbf{0,83 \mid 0,67 \mid 0,58}$</strong></span> ; $7501\text{--}12000: 0,75\mid 0,50\mid 0,50$.
+          </li>
+          <li><strong>🧭 Roteiro Passo a Passo (Ex: Condomínio 10 casas alto padrão $\times 4\text{ hab} = 40\text{ hab}$, $T=12^\circ\text{C}$, 2 anos):</strong>
+            <br><code>Passo 1:</code> $N = 40\text{ hab}$, $q = 160\text{ L/d} \implies Q = 6.400\text{ L/d}$ ($\le 12.000\text{ L/d}$, OK!). Na faixa $6001\text{--}7500\text{ L/d} \implies T_{d,\text{TS}} = 0,67\text{ d}$. Para 2 anos e $12^\circ\text{C} \implies K = 105$ e $L_f = 1,0$.
+            <br><code>Passo 2:</code> Calcular $V_{\text{TS}} = 1000 + 40(160\times 0,67 + 105\times 1,0) = \mathbf{9.488\text{ L} \approx 9,50\text{ m}^3}$.
+            <br><code>Passo 3 (Geometria TS):</code> Escolher profundidade útil $H$ conforme volume: até $6\text{ m}^3 \to 1,2\text{ a }2,2\text{ m}$ | <strong>$6\text{ a }10\text{ m}^3 \to \mathbf{1,5\text{ a }2,5\text{ m}}$</strong> | $&gt;10\text{ m}^3 \to 1,8\text{ a }2,8\text{ m}$. Com $H = 2,0\text{ m} \implies A = 9,5/2,0 = 4,75\text{ m}^2$. Se retangular ($2 \le C/L \le 4$, $L \ge 0,80\text{ m}$): $L = 1,40\text{ m}$ e $C = 3,40\text{ m}$. Se cilíndrico ($D \ge 1,10\text{ m}$): $D = 2,50\text{ m}$.
+            <br><code>Passo 4 (Filtro e Distâncias):</code> Filtro: $V_u = 1,6 \times 40 \times 160 \times 0,83 = \mathbf{8.499\text{ L}}$. Distâncias mínimas TS: <strong>$1,5\text{ m}$</strong> (construções/divisas/valas), <strong>$3,0\text{ m}$</strong> (árvores/rede água), <strong>$15\text{ m}$</strong> (poços/rios). Eficiência TS só: $30\text{--}60\%$ DBO; TS + Filtro: $70\text{--}90\%$ DBO.
+          </li>
         </ul>
       </div>
 
-      <!-- QUADRANTE 4 (FRENTE INFERIOR DIREITO): REATORES ANAERÓBIOS UASB / RAFA (NBR 12209/11) -->
+      <!-- QUADRANTE 4: REATORES ANAERÓBIOS UASB / RAFA (NBR 12209/2011) -->
       <div class="a4-quad">
         <div class="a4-quad-title">
-          <span>Q4. REATORES ANAERÓBIOS UASB / RAFA (NBR 12209/2011)</span>
-          <span>Frente • Inf. Dir.</span>
+          <span>Q4. REATOR ANAERÓBIO UASB / RAFA (NBR 12209/11 — EX. 01 E EX. 02)</span>
+          <span>Frente • Q4</span>
         </div>
         <div class="a4-formula">
-          <strong>Equações UASB:</strong> $\text{Vol} = \bar{Q} \cdot \theta_H$ | $A = \frac{\text{Vol}}{H}$ | $v_{\text{asc}} = \frac{Q}{A}$ | $v_p = \frac{Q}{A_{\text{aberturas}}}$ | $\text{CHV} = \frac{Q}{V} = \frac{1}{\theta_H} &lt; 5\text{ m}^3/(\text{m}^3\cdot\text{d)}$ | $\text{COV} = \frac{Q \cdot C}{V} &lt; 15\text{ kg DQO}/(\text{m}^3\cdot\text{d)}$ | $\text{CB} = \frac{Q \cdot C}{M} = 0,3\text{--}0,4\text{ kg DQO}/(\text{kg SSV}\cdot\text{d)}$
+          <strong>📐 Fórmulas com Nomes:</strong><br>
+          • <strong>Volume Total UASB:</strong> <span class="hl-yellow">$\text{Vol} = \bar{Q} \cdot \theta_H$</span> &nbsp;|&nbsp; <strong>Área Total:</strong> $A = \frac{\text{Vol}}{H}$ &nbsp;|&nbsp; <strong>Carga Hidráulica Vol.:</strong> $\text{CHV} = \frac{Q}{V} = \frac{1}{\theta_H} &lt; 5\text{ m}^3/(\text{m}^3\cdot\text{d)}$<br>
+          • <strong>Carga Orgânica Volumétrica:</strong> $\text{COV} = \frac{Q \cdot C_{\text{DQO}}}{V} &lt; 15\text{ kg DQO}/(\text{m}^3\cdot\text{d)}$ &nbsp;|&nbsp; <strong>Carga Biológica:</strong> $\text{CB} = \frac{Q \cdot C_{\text{DQO}}}{M} = 0,3\text{ a }0,4\text{ kg DQO}/(\text{kg SSV}\cdot\text{d)}$<br>
+          • <strong>Velocidade Ascensional (Digestão):</strong> <span class="hl-green">$v_{\text{asc}} = \frac{Q}{n_{\text{UASB}}\cdot B \cdot L}$</span> &nbsp;|&nbsp; <strong>Velocidade nas Aberturas p/ Decantador:</strong> <span class="hl-yellow">$v_p = \frac{Q}{n_{\text{UASB}}\cdot (2 \cdot e_p \cdot L)}$</span><br>
+          • <strong>Volume do Compartimento de Decantação (1 UASB):</strong> $V_{\text{dec}} = (b_{\text{sup}}\cdot h_{\text{vert}}\cdot L) + \left(\frac{b_{\text{sup}} + b_{\text{inf}}}{2}\cdot h_{\text{incl}}\cdot L\right)$ &nbsp;|&nbsp; $\text{TAS}_{\text{dec}} = \frac{Q_{\text{máx}} / n_{\text{UASB}}}{b_{\text{sup}}\cdot L}$
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Parâmetro Normativo do Reator UASB (Itens 6.4.3 a 6.4.13 da NBR 12209/2011)</th>
-              <th>Para $Q_{\text{média}}$</th>
-              <th>Para $Q_{\text{máxima}}$</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>6.4.3 — TDH Total do Reator ($\theta_H$)</strong> conforme $T_{\text{esgoto}}$ no mês mais frio</td><td>$\ge 10\text{h}$ ($15\text{--}17^\circ\text{C}$) | <span class="hl-yellow">$\ge 8\text{h}$ ($18\text{--}21^\circ\text{C}$)</span><br>$\ge 7\text{h}$ ($22\text{--}25^\circ\text{C}$) | $\ge 6\text{h}$ ($&gt;25^\circ\text{C}$)</td><td>$\theta_{H,\text{mín}} \ge 4,8\text{ h}$ (literatura)</td></tr>
-            <tr><td><strong>6.4.5 e 6.4.13 — Alturas Úteis ($H$)</strong></td><td colspan="2">Total: <span class="hl-yellow">$H = 4,0\text{ a }6,0\text{ m}$</span> | Digestão: $\ge \mathbf{2,5\text{ m}}$ | Decantação: $\ge \mathbf{1,5\text{ m}}$ (parede vert. $\ge 0,3\text{ m}$)</td></tr>
-            <tr><td><strong>6.4.8 — Velocidade Ascensional na Digestão ($v_{\text{asc}}$)</strong></td><td><span class="hl-green">$\le \mathbf{0,7\text{ m/h}}$</span> ($0,5\text{--}0,7$)</td><td><span class="hl-green">$\le \mathbf{1,2\text{ m/h}}$</span> (pico 2–4h: $&lt;1,5$)</td></tr>
-            <tr><td><strong>6.4.9 — Velocidade de Passagem p/ Decantador ($v_p$)</strong></td><td><span class="hl-yellow">$\le \mathbf{2,5\text{ m/h}}$</span></td><td><span class="hl-yellow">$\le \mathbf{4,0\text{ m/h}}$</span></td></tr>
-            <tr><td><strong>6.4.10 e 6.4.13 — Separador Trifásico (GLS)</strong></td><td colspan="2">Ângulo parede inclinada: <span class="hl-yellow">$\theta \ge \mathbf{50^\circ}$</span> | Trespasse do defletor de gás: <span class="hl-yellow">$\ge \mathbf{0,15\text{ m}}$ ($15\text{ cm}$)</span></td></tr>
-            <tr><td><strong>6.4.11 e 6.4.12 — Compartimento de Decantação</strong></td><td>$\theta_{H,\text{dec}} \ge \mathbf{1,5\text{ h}}$</td><td>$\theta_{H,\text{dec}} &gt; \mathbf{1,0\text{ h}}$ e <span class="hl-red">$\text{TAS}_{\text{dec}} \le \mathbf{1,2\text{ m}^3/(\text{m}^2\cdot\text{h)}}$</span></td></tr>
-          </tbody>
-        </table>
         <ul class="a4-list">
-          <li><strong>Roteiro Geométrico do Ex.2 de UASB Retangular ($B = 4,0\text{ m}$, $H = 4,0\text{ m}$, $L = 20\text{ m}$, 4 reatores):</strong>
-            <br>• Altura $H = 4,0\text{ m}$ ($2,5\text{ m}$ digestão + $1,5\text{ m}$ decantação, sendo $0,50\text{ m}$ parede vertical $\ge 0,3\text{ m}$ e $1,00\text{ m}$ parede inclinada).
-            <br>• Parede inclinada: $y = 100\text{ cm}$, $x = 80\text{ cm} \implies \theta = \tan^{-1}(100/80) = 51,3^\circ \ge 50^\circ$.
-            <br>• Largura no topo: $B = 400\text{ cm} = 2\times 60\text{ cm (gás)} + 280\text{ cm (decantador)}$. Base menor do decantador: $280 - 2(80) = 120\text{ cm}$ ($1,2\text{ m}$).
-            <br>• Defletor triangular ($45^\circ$): aba inclinada $a = 60\text{ cm}$, base $150\text{ cm}$ ($120 + 2\times 15\text{ cm}$ de trespasse!), deixando 2 aberturas de passagem de $e_p = 60\sin 45^\circ = \mathbf{0,424\text{ m}}$ por reator ($A_{\text{pass,1 UASB}} = 2 \times 0,424 \times L$).
-            <br>• Volume do decantador de 1 UASB: $V_{\text{dec}} = (2,8 \times 0,5 \times L) + \left(\frac{2,8 + 1,2}{2} \times 1,0 \times L\right) = 3,4 \cdot L$ (p/ $L=20\text{ m} \implies V_{\text{dec}} = 68\text{ m}^3$ e $A_{\text{sup,dec}} = 2,8 \times 20 = 56\text{ m}^2$).
+          <li><strong>🎯 Todos os Limites da NBR 12209/11 (Solução do Exercício 1 de UASB):</strong>
+            <br>• <strong>6.4.3 — TDH Total ($\theta_H$ p/ $\bar{Q}$):</strong> $\ge 10\text{ h}$ ($15\text{--}17^\circ\text{C}$) &nbsp;|&nbsp; <span class="hl-yellow"><strong>$\ge 8\text{ h}$ ($18\text{--}21^\circ\text{C}$)</strong></span> &nbsp;|&nbsp; $\ge 7\text{ h}$ ($22\text{--}25^\circ\text{C}$) &nbsp;|&nbsp; $\ge 6\text{ h}$ ($&gt;25^\circ\text{C}$).
+            <br>• <strong>6.4.5 e 6.4.13 — Alturas Úteis ($H$):</strong> Total <span class="hl-yellow">$H = \mathbf{4,0\text{ a }6,0\text{ m}}$</span>, sendo <strong>Digestão $\ge 2,5\text{ m}$</strong> e <strong>Decantação $\ge 1,5\text{ m}$</strong> (parede vertical $\ge 0,30\text{ m}$ e parede inclinada com ângulo <span class="hl-yellow">$\theta \ge \mathbf{50^\circ}$</span>).
+            <br>• <strong>6.4.8 — Velocidade Ascensional ($v_{\text{asc}}$):</strong> <span class="hl-green"><strong>$\le 0,7\text{ m/h}$ ($\bar{Q}$)</strong></span> e <span class="hl-green"><strong>$\le 1,2\text{ m/h}$ ($Q_{\text{máx}}$)</strong></span>. <em>(Evita arraste da manta de lodo floculento!)</em>
+            <br>• <strong>6.4.9 e 6.4.10 — Passagem p/ Decantador ($v_p$) e Trespasse:</strong> <span class="hl-yellow"><strong>$v_p \le 2,5\text{ m/h}$ ($\bar{Q}$)</strong></span> e <span class="hl-yellow"><strong>$\le 4,0\text{ m/h}$ ($Q_{\text{máx}}$)</strong></span>. <strong>Trespasse do defletor de gás $\ge \mathbf{0,15\text{ m}}$ ($15\text{ cm}$)</strong> (impede entrada de biogás no decantador!).
+            <br>• <strong>6.4.11 e 6.4.12 — Decantador:</strong> $\theta_{H,\text{dec}} \ge \mathbf{1,5\text{ h}}$ ($\bar{Q}$) e $&gt; \mathbf{1,0\text{ h}}$ ($Q_{\text{máx}}$); <span class="hl-red"><strong>$\text{TAS}_{\text{dec}} \le \mathbf{1,2\text{ m}^3/(\text{m}^2\cdot\text{h)}}$ ($Q_{\text{máx}}$)</strong></span>.
           </li>
-          <li><strong>Leito Expandido vs. Fluidizado:</strong> Meio suporte granular móvel; Expansão: $20\text{--}30\%$ (Expandido) vs Quase total (Fluidizado); $v_{\text{asc}}$ pode atingir $&gt; 10\text{ m/h}$ (lodo granular).</li>
+          <li><strong>🧭 Roteiro Passo a Passo do Exercício 2 de UASB Retangular (Itens a $\to$ k da Professora):</strong>
+            <br><code>a–d)</code> Passar $\bar{Q}$ e $Q_{\text{máx}}$ p/ $\text{m}^3/\text{h}$ ($\bar{Q}=148,68$; $Q_{\text{máx}}=267,48$). Calcular $\text{Vol} = 148,68 \times 8\text{h} = 1189,44\text{ m}^3$. Adotar $H = 4\text{ m}$ ($2,5 + 1,5$) $\implies A = 1189,44/4 = 297,36\text{ m}^2$.
+            <br><code>e–f) Geometria da Seção (B = 4,0 m):</code> Topo tem $2\times 0,60\text{ m}$ (coletores de gás) $+ \mathbf{2,80\text{ m}}$ ($b_{\text{sup}}$ do decantador). Parede vertical $= 0,50\text{ m}$. Parede inclinada: altura $1,00\text{ m}$ e avanço horiz. $x = 0,80\text{ m}$ ($\theta = \tan^{-1}(100/80) = 51,3^\circ \ge 50^\circ$), deixando base menor $b_{\text{inf}} = 2,80 - 2(0,80) = \mathbf{1,20\text{ m}}$. Defletor ($45^\circ$, aba $a=0,60\text{ m}$, base $1,50\text{ m} \to$ trespasse $0,15\text{ m}$) deixa 2 fendas de $e_p = 0,60\sin 45^\circ = \mathbf{0,424\text{ m}}$. Dividindo $L_{\text{tot}} = 297,36/4 = 74,34\text{ m}$ em <strong>4 reatores</strong>: $L_1 = 18,58 \to$ adota-se <strong>$L = 20\text{ m}$</strong> ($\text{Vol}_1 = 320\text{ m}^3$).
+            <br><code>g–k) Verificações:</code> $v_{\text{asc}} = 0,46$ ($\bar{Q}$) e $0,83\text{ m/h}$ ($Q_{\text{máx}}$); $v_p = 2,06$ ($\bar{Q}$) e $3,94\text{ m/h}$ ($Q_{\text{máx}}$); $V_{\text{dec}} = (2,8\times 0,5\times 20) + (\frac{2,8+1,2}{2}\times 1,0\times 20) = \mathbf{68\text{ m}^3} \implies \theta_{H,\text{dec}} = 1,8\text{h}$ ($\bar{Q}$) e $1,0\text{h}$ ($Q_{\text{máx}}$); $\text{TAS}_{\text{dec}} = \frac{267,48/4}{2,8\times 20} = \mathbf{1,19\text{ m/h}} \le 1,2\text{ (OK!)}$.
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- ===============================================================
-         PÁGINA 2 DA FOLHA A4 — VERSO (4 QUADRANTES)
+         PÁGINA 2 DA FOLHA A4 — VERSO (QUADRANTES Q5 A Q8)
          =============================================================== -->
     <div class="a4-page" id="a4-verso">
       <div class="a4-banner">
-        <span>FOLHA DE CONSULTA A4 — VERSO (LODOS ATIVADOS, LAGOAS, WETLANDS & DIAGNÓSTICO)</span>
-        <span>DIVIDA O VERSO EM 4 QUADRANTES (Q5 a Q8)</span>
+        <span>FOLHA A4 — VERSO: LODOS ATIVADOS, LAGOAS, WETLANDS & DIAGNÓSTICO DE PROVA</span>
+        <span>Q5 (LODOS ATIVADOS) • Q6 (LAGOAS LA/LF/LM) • Q7 (WETLANDS) • Q8 (COMPARAÇÃO & FALHAS)</span>
       </div>
 
-      <!-- QUADRANTE 5 (VERSO SUPERIOR ESQUERDO): LODOS ATIVADOS (CONVENCIONAL VS AERAÇÃO PROLONGADA) -->
+      <!-- QUADRANTE 5: LODOS ATIVADOS (CONVENCIONAL VS AERAÇÃO PROLONGADA) -->
       <div class="a4-quad">
         <div class="a4-quad-title">
           <span>Q5. LODOS ATIVADOS — CONVENCIONAL VS. AERAÇÃO PROLONGADA</span>
-          <span>Verso • Sup. Esq.</span>
+          <span>Verso • Q5</span>
         </div>
         <div class="a4-formula">
-          <strong>Fração Biodegradável:</strong> $f_{\text{bio}} = \frac{f'_{\text{bio}}}{1 + (1 - f'_{\text{bio}})\cdot k_d \cdot \theta_c}$ ($f'_{\text{bio}} = 0,80$; $k_d = 0,06\text{--}0,10\text{ d}^{-1}$; $Y = 0,4\text{--}0,8\text{ g SSV/g DBO}$)<br>
-          <strong>Volume do Reator:</strong> <span class="hl-yellow">$V = \frac{Y \cdot \theta_c \cdot Q_a \cdot (S_a - S_e)}{X_V \cdot (1 + k_d \cdot f_{\text{bio}} \cdot \theta_c)}$</span> | <strong>Relação A/M:</strong> $\frac{A}{M} = \frac{Q_a \cdot S_a}{V \cdot X_V} \left[\frac{\text{kg DBO}_5}{\text{kg SSV}\cdot\text{d}}\right]$<br>
-          <strong>Recirculação ($R$):</strong> <span class="hl-green">$R = \frac{Q_R}{Q_a} = \frac{X}{X_R - X}$</span> | <strong>Descarte Lodo ($Q_D$):</strong> No Reator: $Q_D = \frac{V}{\theta_c}$ | Na Linha Retorno: $Q_D = \frac{V}{\theta_c}\cdot\frac{X}{X_R}$
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Parâmetro / Característica</th>
-              <th>Alta Taxa</th>
-              <th>Taxa Convencional</th>
-              <th>Aeração Prolongada</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Idade do Lodo ($\theta_c$ — NBR 12209)</strong></td><td>2 a 4 dias</td><td><span class="hl-yellow"><strong>4 a 15 dias</strong></span> (usual 3–10 d)</td><td><span class="hl-green"><strong>&gt; 18 dias</strong></span> (18 a 30 d)</td></tr>
-            <tr><td><strong>Relação $A/M$ (NBR 12209)</strong></td><td>0,70 a 1,10</td><td><span class="hl-yellow"><strong>0,20 a 0,70</strong></span> (usual 0,3–0,8)</td><td><span class="hl-green"><strong>$\le$ 0,15</strong></span> (0,08 a 0,15)</td></tr>
-            <tr><td><strong>SSV no Reator ($X_V$ — NBR 12209)</strong></td><td>1500–4500 mg/L</td><td><strong>1.500 a 3.500 mg/L</strong></td><td><strong>2.500 a 4.000 mg/L</strong></td></tr>
-            <tr><td><strong>Tempo de Contato ($\theta_H$)</strong></td><td>1 a 2 h</td><td>2 a 6 h</td><td>8 a 24 h</td></tr>
-            <tr><td><strong>Decantador Primário a montante?</strong></td><td>Sim</td><td><strong>SIM (Obrigatório)</strong></td><td><strong>NÃO inclui</strong> (evita lodo primário cru)</td></tr>
-            <tr><td><strong>Estabilização do Lodo Excedente</strong></td><td>Não estabilizado</td><td><strong>NÃO estabilizado</strong> (exige digestor!)</td><td><strong>JÁ SAI ESTABILIZADO</strong> (resp. endógena!)</td></tr>
-            <tr><td><strong>Eficiência DBO / Consumo Energia</strong></td><td>80–85% / Baixo</td><td>85–93% / Médio ($1,5\text{--}2,8\text{ W/hab}$)</td><td><strong>93–98%</strong> / <strong>Alto ($2,5\text{--}4,0\text{ W/hab}$)</strong></td></tr>
-            <tr><td><strong>Seletor Biológico ($A/M$)</strong></td><td>—</td><td>$\ge 3,0\text{ kg DBO}/(\text{kg SSV}\cdot\text{d)}$</td><td>$\ge 1,8\text{ kg DBO}/(\text{kg SSV}\cdot\text{d)}$</td></tr>
-          </tbody>
-        </table>
-        <ul class="a4-list">
-          <li><strong>Regra de Ouro NBR 12209:</strong> <em>"O tempo de detenção hidráulico ($\theta_H$) NÃO pode ser usado como parâmetro determinante no dimensionamento de lodos ativados"</em> $\to$ quem governa é $\theta_c$ (tempo que a biomassa fica retida graças à recirculação: $\theta_c \gg \theta_H$)! Sem recirculação: $\theta_c = \theta_H$.</li>
-          <li><strong>Aeração Prolongada (Por que o lodo já sai estabilizado?):</strong> Com $\theta_c &gt; 18\text{ d}$ e $A/M \le 0,15$, há pouco alimento disponível por unidade de biomassa; as bactérias oxidam o próprio material celular (<strong>respiração endógena</strong>, $f_{\text{bio}}$ cai), reduzindo a geração específica de lodo e dispensando digestores!</li>
-          <li><strong>Sistemas de Aeração:</strong> <em>Ar difuso</em> (bolhas no fundo; maior eficiência de transferência de $\text{O}_2$, menor arraste de aerossóis) vs. <em>Aeração mecânica superficial</em> (turbinas/escovas que turbilhonam o líquido).</li>
-          <li><strong>Seletor Anóxico:</strong> Câmara a montante do reator onde misturam-se esgoto afluente + lodo recirculado com alto $A/M$: previne <em>bulking</em> filamentoso e realiza desnitrificação ($\text{NO}_3^- \to \text{N}_2$).</li>
-        </ul>
-      </div>
-
-      <!-- QUADRANTE 6 (VERSO SUPERIOR DIREITO): LAGOAS DE ESTABILIZAÇÃO (LA, LF, LM) -->
-      <div class="a4-quad">
-        <div class="a4-quad-title">
-          <span>Q6. LAGOAS DE ESTABILIZAÇÃO (LA, LF, LM & SISTEMA AUSTRALIANO)</span>
-          <span>Verso • Sup. Dir.</span>
-        </div>
-        <div class="a4-formula">
-          <strong>Geometria Taludes ($1\text{V}:n\text{H}$):</strong> A partir de $A_{1/2}$ ($L_{1/2} \times B_{1/2}$): Fundo $= (L - nH)\times(B - nH)$; Nível d'água $= (L + nH)\times(B + nH)$; Coroamento (c/ borda livre $b_l \approx 0,5\text{m}$) $= (L + nH + 2nb_l)\times(B + nH + 2nb_l)$.
+          <strong>📐 Fórmulas com Nomes:</strong><br>
+          • <strong>1. Fração Biodegradável dos SSV ($f_{\text{bio}}$):</strong> <span class="hl-green">$f_{\text{bio}} = \frac{f'_{\text{bio}}}{1 + (1 - f'_{\text{bio}})\cdot k_d \cdot \theta_c}$</span> &nbsp;(onde $f'_{\text{bio}} = \mathbf{0,80}$ e $k_d = \mathbf{0,06\text{ a }0,10\text{ d}^{-1}}$, típ. $0,08$)<br>
+          • <strong>2. Volume do Reator Aeróbio ($V$):</strong> <span class="hl-yellow">$V = \frac{Y \cdot \theta_c \cdot Q_a \cdot (S_a - S_e)}{X_V \cdot (1 + k_d \cdot f_{\text{bio}} \cdot \theta_c)}$</span> &nbsp;(onde $Y = \mathbf{0,4\text{ a }0,8\text{ g SSV/g DBO}}$, típ. $0,60$)<br>
+          • <strong>3. Relação Alimento/Microrganismo ($A/M$):</strong> $\frac{A}{M} = \frac{Q_a \cdot S_a}{V \cdot X_V}\text{ [kg DBO}/(\text{kg SSV}\cdot\text{d)]}$ &nbsp;|&nbsp; <strong>Tempo de Contato Hidráulico:</strong> $\theta_H = \frac{V}{Q_a}$<br>
+          • <strong>4. Idade do Lodo ($\theta_c$):</strong> $\theta_c = \frac{V \cdot X_V}{Q_D \cdot X_{V,R}}$ (Sem recirculação: $\theta_c = \theta_H$) &nbsp;|&nbsp; <strong>5. Razão de Recirculação ($R$):</strong> <span class="hl-green">$R = \frac{Q_R}{Q_a} = \frac{X}{X_R - X}$</span><br>
+          • <strong>6. Vazão de Descarte de Lodo Excedente ($Q_D$):</strong> Direto do Reator: $Q_D = \frac{V}{\theta_c}$ &nbsp;|&nbsp; Pela Linha de Recirculação: $Q_D = \frac{V}{\theta_c}\cdot\frac{X}{X_R}$
         </div>
         <ul class="a4-list">
-          <li><strong>A. Lagoa Anaeróbia (LA — Trat. Primário/Secundário de Alta Carga):</strong>
-            <br>• Profundidade: <span class="hl-yellow">$H = 3\text{ a }5\text{ m}$</span> (impede penetração de luz $\to$ sem algas/OD). Relação $L/B = 1\text{ a }3$. Distância $\ge 500\text{ m}$ de cidades.
-            <br>• <strong>Taxa Volumétrica ($\lambda_v = \frac{C_i Q}{V} = \frac{C_i}{T_d}$):</strong> Faixa $100\text{ a }400\text{ g DBO}/(\text{m}^3\cdot\text{d)}$ (<span class="hl-green">Recomendado: $250$</span>). Para $10\text{--}20^\circ\text{C}$: $\lambda_v = 20T - 100$ e $E = 2T + 20\%$; para $20\text{--}25^\circ\text{C}$: $\lambda_v = 10T + 100$. Eficiência adotada no Brasil: <strong>$50\%$ ($T \le 20^\circ\text{C}$) e $60\%$ ($T &gt; 20^\circ\text{C}$)</strong>.
-            <br>• <strong>TDH ($T_d$):</strong> <span class="hl-yellow">$3\text{ a }6\text{ dias}$</span>. <em>Justificativa: Se $T_d &lt; 3\text{ d}$, ocorre lavagem das metanogênicas (saem mais rápido que reproduzem); se $T_d &gt; 6\text{ d}$ (ou $\lambda_v &lt; 100$), vira facultativa e o $\text{O}_2$ mata as metanogênicas! Se $\lambda_v &gt; 400$ ou $\lambda_s &gt; 2000\text{ kg}/(\text{ha}\cdot\text{d)}$: mau odor ($\text{H}_2\text{S}$)!</em>
-            <br>• Verificação superficial LA: $\lambda_{\text{mín}} \gg 20T_v - 60$ ($&gt;1000\text{ kg/ha.d}$ garante anaerobiose) e $\lambda_{\text{máx}} &lt; 2000\text{ kg/ha.d}$. Limpeza de lodo ($K = 0,03\text{--}0,04\text{ m}^3/\text{hab.ano}$) quando atingir $0,5 H$: $n_{\text{anos}} = \frac{0,5 V}{K \cdot \text{Pop}}$.
+          <li><strong>🎯 Variáveis Diretas de Projeto (NBR 12209/11 — Sem precisar de Tabelão):</strong>
+            <br>• <strong>Taxa Convencional:</strong> Idade do lodo <span class="hl-yellow">$\theta_c = \mathbf{4\text{ a }15\text{ dias}}$</span> (usual $6\text{ d}$) &nbsp;|&nbsp; Relação <span class="hl-yellow">$A/M = \mathbf{0,20\text{ a }0,70}$</span> &nbsp;|&nbsp; Biomassa $X_V = \mathbf{1.500\text{ a }3.500\text{ mg/L}}$ (adotar $2500$) &nbsp;|&nbsp; Tempo de contato $\theta_H = 2\text{ a }6\text{ h}$ &nbsp;|&nbsp; Seletor biológico: $A/M \ge 3,0$. <strong>Exige Decantador Primário antes e Digestor de Lodo depois!</strong>
+            <br>• <strong>Aeração Prolongada:</strong> Idade do lodo <span class="hl-green">$\theta_c &gt; \mathbf{18\text{ dias}}$</span> &nbsp;|&nbsp; Relação <span class="hl-green">$A/M \le \mathbf{0,15}$</span> ($0,08\text{--}0,15$) &nbsp;|&nbsp; Biomassa $X_V = \mathbf{2.500\text{ a }4.000\text{ mg/L}}$ &nbsp;|&nbsp; Tempo de contato $\theta_H = 8\text{ a }24\text{ h}$ &nbsp;|&nbsp; Seletor: $A/M \ge 1,8$. <strong>Dispensa Decantador Primário e o lodo excedente JÁ SAI ESTABILIZADO</strong> (devido à respiração endógena: falta comida e as bactérias oxidam o próprio material celular!), porém tem maior volume e maior gasto energético ($2,5\text{--}4,0\text{ W/hab}$).
+            <br>• <strong>Alta Taxa:</strong> $\theta_c = 2\text{ a }4\text{ d}$ &nbsp;|&nbsp; $A/M = 0,70\text{ a }1,10$.
           </li>
-          <li><strong>B. Lagoa Facultativa (LF — Simbiose Algas + Bactérias):</strong>
-            <br>• Profundidade: <strong>Primária: $1,5\text{ a }2,0\text{ m}$ (usual $1,8\text{ m}$)</strong> | <strong>Secundária: $1,2\text{ a }1,8\text{ m}$ (usual $1,5\text{ m}$, $L/B = 6:1\text{ a }7:1$)</strong>. ($&gt;0,60\text{ m}$ evita plantas/mosquitos). $T_d = 15\text{ a }45\text{ d}$.
-            <br>• <strong>1) Carga Superficial:</strong> $A_{1/2}(\text{ha}) = \frac{W(\text{kg DBO/d})}{\lambda_s(\text{kg DBO/ha.d})}$ ($1\text{ ha} = 10.000\text{ m}^2$). Em LF secundária (Kawai): $\lambda_s = 50\text{ a }170\text{ kg/(ha.d)}$ e $\lambda_{\text{rem}} = 0,7702\lambda_{\text{aplic}} - 5,4188$.
-            <br>• <strong>2) McGarry &amp; Pescod ($T$ mês mais frio):</strong> $\lambda_{s,\text{máx}} = 60(1,0993)^T$ ou <span class="hl-yellow">$\lambda_{s,\text{máx}} = 20T - 60$</span> $\implies$ Adotar fator $0,67$: $\lambda_{s,\text{proj}} = 0,67 \cdot \lambda_{s,\text{máx}}$.
-            <br>• <strong>3) Mistura Completa 1ª Ordem:</strong> $C_e = \frac{C_i}{1 + k_{1,T} T_d}$ e $A_{1/2} = \frac{Q}{H \cdot k_{1,T}}\left(\frac{C_i}{C_e} - 1\right)$ com $k_{1,T} = 0,3 \cdot (1,05)^{(T-20)}$.
-            <br>• <strong>4) Gloyna (p/ 90% DBO):</strong> $V = 3,5\times 10^{-5} \cdot Q(\text{L/d})\cdot C_i \cdot \theta^{(35-T)}$ (ou $V = \frac{C_i Q(\text{m}^3/\text{s})}{200}\cdot T_{d,35}\cdot 1,047^{(35-T)}$).
-          </li>
-          <li><strong>C. Lagoa de Maturação (LM — Polimento Terciário / Patógenos):</strong>
-            <br>• Limitação de entrada: $\text{DBO}_5 &lt; 75\text{ mg/L}$ ($50\text{--}70\text{ mg/L}$). Profundidade rasa: <span class="hl-yellow">$H = 0,8\text{ a }1,2\text{ m}$</span> (penetração UV solar + alto pH/OD). $T_d \ge 3\text{ d}$ por lagoa (ou $7\text{ d}$ única). Eficiência CF: $90\text{ a }99,99\%$.
-            <br>• <strong>Mistura Completa em Série:</strong> <span class="hl-green">$N_e = \frac{N_i}{(1 + k_{b,T} T_{d,1})(1 + k_{b,T} T_{d,2})\cdots}$</span> com $k_{b,T} = 2,6 \cdot (1,19)^{(T-20)}$.
-            <br>• <strong>Fluxo Disperso (Yanez):</strong> $N_e = N_0 \frac{4 a e^{1/(2d)}}{(1+a)^2 e^{a/(2d)} - (1-a)^2 e^{-a/(2d)}}$, $a = \sqrt{1 + 4 K T_d d}$, $d = \frac{L/B}{-0,261 + 0,254(L/B) + 1,014(L/B)^2}$.
+          <li><strong>🧭 Roteiro Passo a Passo do Exercício de Lodos Ativados Convencional:</strong>
+            <br><code>Passo 1 (Substrato de Entrada Sa):</code> Descontar os $30\%$ de DBO removidos no Decantador Primário: $S_a = 350 \times (1 - 0,30) = \mathbf{245\text{ mg/L}}$. Adotar DBO solúvel de saída $S_e = \mathbf{20\text{ mg/L}}$ (eficiência global ~94%). Usar vazão média final $Q_a = 3.568,3\text{ m}^3/\text{d}$.
+            <br><code>Passo 2 (Cálculo de f_bio e Volume V):</code> Adotar $\theta_c = 6\text{ d}$, $X_V = 2500\text{ mg/L}$, $Y = 0,60$, $k_d = 0,08\text{ d}^{-1}$, $f'_{\text{bio}} = 0,80$. Calcular $f_{\text{bio}} = \frac{0,80}{1 + 0,20\times 0,08\times 6} = \mathbf{0,730}$. Substituir na fórmula de $V \implies \mathbf{V = 856\text{ m}^3}$ (ex: 2 tanques de $428\text{ m}^3$).
+            <br><code>Passo 3 (Verificações e Recirculação):</code> Checar $\theta_H = \frac{856}{3568,3}\times 24 = \mathbf{5,76\text{ h}} \in [2, 6]\text{h}$ e $A/M = \frac{3568,3\times 0,245}{856\times 2,5} = \mathbf{0,41} \in [0,20; 0,70]$. Adotando lodo de retorno $X_{V,R} = 8000\text{ mg/L}$: calcular $R = \frac{2500}{8000-2500} = \mathbf{0,455\ (45,5\%)}$ e descarte $Q_D = \frac{856}{6}\times\frac{2500}{8000} = \mathbf{44,6\text{ m}^3/\text{d}}$.
+            <br><em>Frase Obrigatória NBR 12209: "O TDH ($\theta_H$) não pode ser usado como parâmetro determinante no dimensionamento; quem governa é a idade do lodo $\theta_c$!"</em>
           </li>
         </ul>
       </div>
 
-      <!-- QUADRANTE 7 (VERSO INFERIOR ESQUERDO): WETLANDS CONSTRUÍDAS (FS, FSSH, FSSV & HÍBRIDO) -->
+      <!-- QUADRANTE 6: LAGOAS DE ESTABILIZAÇÃO (LA, LF, LM) -->
       <div class="a4-quad">
         <div class="a4-quad-title">
-          <span>Q7. WETLANDS CONSTRUÍDAS (ZONA DE RAÍZES — FSSH, FSSV & NBR 17076)</span>
-          <span>Verso • Inf. Esq.</span>
+          <span>Q6. LAGOAS DE ESTABILIZAÇÃO — SISTEMA AUSTRALIANO (LA $\to$ LF $\to$ LM)</span>
+          <span>Verso • Q6</span>
         </div>
         <div class="a4-formula">
-          <strong>WC Superficial (FS):</strong> $A_h = \frac{Q(\ln C_0 - \ln C_e)}{K_{\text{DBO}}}$ ($K_{\text{DBO}} = 0,10\text{ d}^{-1}$ secundário; $0,31\text{ d}^{-1}$ terciário)<br>
-          <strong>WC Subsuperficial Horizontal (FSSH — Metcalf &amp; Eddy):</strong> <span class="hl-yellow">$A_h = \frac{Q(\ln C_0 - \ln C_e)}{K_T \cdot p \cdot n}$</span> onde $K_T = K_{20}(1,06)^{(T-20)}$ ($K_{20} = 1,1\text{ a }1,9\text{ d}^{-1}$)<br>
-          <strong>TDH Real e Volume do Tanque (com porosidade $n$):</strong> <span class="hl-green">$\theta_H = \frac{L \cdot B \cdot h \cdot n}{Q}$</span> e $\text{Vol}_{\text{tanque}} = \frac{Q \cdot \theta_H}{n}$ ($\theta_H = 0,5\text{--}15\text{ d}$; esgoto bruto $\ge 2,5\text{ d}$)<br>
-          <strong>WC Fluxo Vertical (FSSV — Johansen &amp; Brix):</strong> $\text{OD}(\text{kg O}_2/\text{d}) = 4,3\cdot(\text{NH}_4\text{-N}) + 1,0\cdot(\text{DBO}_5) \implies A = \frac{\text{OD}}{\text{SAD}}$ ($\text{SAD} &lt; 30\text{ g O}_2/\text{m}^2\text{.d}$)
+          <strong>📐 Fórmulas com Nomes:</strong><br>
+          • <strong>1. Lagoa Anaeróbia (LA — Taxa Volumétrica $\lambda_v$):</strong> <span class="hl-yellow">$\lambda_v = \frac{W_{\text{in}}}{V_{\text{LA}}} = \frac{C_i}{T_d}\text{ [g DBO}/(\text{m}^3\cdot\text{d)]}$</span> $\implies V_{\text{LA}} = \frac{W_{\text{in}}}{\lambda_v}$ ou $V_{\text{LA}} = Q \cdot T_d$ &nbsp;|&nbsp; Limpeza LA ($0,5V$): $n_{\text{anos}} = \frac{0,5 \cdot V}{K \cdot \text{Pop}}$ ($K=0,03\text{--}0,04\text{ m}^3/\text{hab.ano}$)<br>
+          • <strong>2. Lagoa Facultativa (LF — Carga Superficial $\lambda_s$):</strong> <span class="hl-green">$A_{1/2}\text{ [ha]} = \frac{W_{\text{in,LF}}\text{ [kg DBO/d]}}{\lambda_s\text{ [kg DBO/(ha}\cdot\text{d)]}}$</span> ($1\text{ ha} = 10.000\text{ m}^2$) &nbsp;|&nbsp; <strong>McGarry &amp; Pescod:</strong> $\lambda_{s,\text{máx}} = 20T - 60 \implies \lambda_{s,\text{proj}} = 0,67 \cdot \lambda_{s,\text{máx}}$<br>
+          • <strong>3. LF Mistura Completa 1ª Ordem:</strong> $C_e = \frac{C_i}{1 + k_{1,T} T_d}$ e $A_{1/2} = \frac{Q}{H \cdot k_{1,T}}\left(\frac{C_i}{C_e} - 1\right)$ com $k_{1,T} = 0,3(1,05)^{T-20}$ &nbsp;|&nbsp; <strong>Gloyna (90% DBO):</strong> $V = \frac{C_i Q(\text{m}^3/\text{s})}{200} T_{d,35}\cdot 1,047^{(35-T)}$<br>
+          • <strong>4. Lagoa de Maturação (LM — Coliformes em Série):</strong> <span class="hl-yellow">$N_e = \frac{N_i}{(1 + k_{b,T} T_{d,1})\cdots(1 + k_{b,T} T_{d,n})}$</span> com $k_{b,T} = 2,6(1,19)^{T-20}$<br>
+          • <strong>5. Fluxo Disperso (Yanez):</strong> $N_e = N_0 \frac{4 a e^{1/(2d)}}{(1+a)^2 e^{a/(2d)} - (1-a)^2 e^{-a/(2d)}}$ onde $a = \sqrt{1 + 4 K T_d d}$ e $d = \frac{L/B}{-0,261 + 0,254(L/B) + 1,014(L/B)^2}$<br>
+          • <strong>6. Dimensões de Talude ($1\text{V}:n\text{H}$ a partir de $A_{1/2} = L \times B$):</strong> Fundo $= (L - nH)(B - nH)$ &nbsp;|&nbsp; Nível d'água $= (L + nH)(B + nH)$ &nbsp;|&nbsp; Coroamento $= (L + nH + 2nb_l)(B + nH + 2nb_l)$
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Parâmetro NBR 17076/2024 ($Q \le 12.000\text{ L/d}$, $W \le 3,8\text{ kg DBO/d}$)</th>
-              <th>Fluxo Horizontal (WC-FSSH)</th>
-              <th>Fluxo Vertical (WC-FSSV)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Meio Suporte Típico / Ciclo Operacional</strong></td><td>Brita nº 1 / <strong>Contínuo</strong> (Saturado/Anóxico)</td><td>Areia / <strong>Intermitente</strong> (Bateladas/Aeróbio)</td></tr>
-            <tr><td><strong>TAS Orgânica na Superfície ($\text{g DBO}/(\text{m}^2\cdot\text{d)}$)</strong></td><td><span class="hl-yellow"><strong>6 a 15</strong></span></td><td><span class="hl-green"><strong>10 a 20</strong></span></td></tr>
-            <tr><td><strong>TAS Orgânica na Seção Transversal ($B \times h$)</strong></td><td><span class="hl-red"><strong>$\le$ 250 $\text{g DBO}/(\text{m}^2\cdot\text{d)}$</strong></span> (evitar colmatação!)</td><td>— (alimentação pelo topo)</td></tr>
-            <tr><td><strong>TAS Hidráulica ($\text{m}^3/(\text{m}^2\cdot\text{d)}$)</strong></td><td><strong>0,02 a 0,08</strong></td><td><strong>0,015 a 0,12</strong></td></tr>
-            <tr><td><strong>Profundidade do Meio Filtrante ($h$)</strong></td><td><strong>0,50 a 0,90 m</strong> (líquido ~10 cm abaixo do topo)</td><td><strong>0,70 a 1,10 m</strong> (até 1,5 m)</td></tr>
-            <tr><td><strong>Área Específica no Brasil ($\text{m}^2/\text{hab}$)</strong></td><td><strong>~ 2,0 $\text{m}^2/\text{EP}$</strong> (Clima frio: $5,0$)</td><td><strong>0,8 a 1,5 $\text{m}^2/\text{EP}$</strong> (típ. $1,2$; Frio: $3\text{--}4$)</td></tr>
-          </tbody>
-        </table>
         <ul class="a4-list">
-          <li><strong>Por que usar Sistema Híbrido (FSSV $\to$ FSSH)?</strong> O <strong>FSSV</strong> (alimentado por pulsos intermitentes) é altamente oxigenado e promove excelente <strong>nitrificação ($\text{NH}_4^+ \to \text{NO}_3^-$)</strong>; em seguida, o <strong>FSSH</strong> (saturado e anóxico) promove a <strong>desnitrificação ($\text{NO}_3^- \to \text{N}_2$)</strong>, entregando efluente com baixíssima DBO e remoção completa de nitrogênio!</li>
-          <li><strong>Papel das Macrófitas (Taboa <em>Typha</em>, Junco <em>Eleocharis</em>, Papiro <em>Cyperus</em>):</strong> Transferem $\text{O}_2$ atmosférico das folhas até as raízes via <strong>aerênquimas</strong> (criando microssítios aeróbios/anóxicos/anaeróbios na rizosfera), fornecem suporte para o <strong>biofilme bacteriano</strong>, absorvem N/P/metais, evitam erosão e <strong>previnem a colmatação</strong> pelo crescimento radicular.</li>
-          <li><strong>Geometria construtiva:</strong> Relação $L:B \ge 2:1$ (usual $3:1$), $L_{\text{máx}} = 25\text{--}30\text{ m}$, declividade de fundo $0,5\%\text{ a }1\%$, impermeabilização da base (PEAD $1\text{ mm}$ ou argila compactada) e tubos perfurados $\text{DN }100\text{ mm}$ na entrada/saída com brita grossa ($0,5\text{--}1,0\text{ m}$).</li>
+          <li><strong>🧭 Roteiro Passo a Passo dos Exercícios 1, 2 e 3 de Lagoas ($W_{\text{in}} = 1.249\text{ kg DBO/d}$, $Q = 3.568,3\text{ m}^3/\text{d}$):</strong>
+            <br><code>Passo 1 — Lagoa Anaeróbia (Ex.1):</code> Adotar $\lambda_v \in [100, 400]\text{ g DBO}/(\text{m}^3\cdot\text{d)}$ (recomendado: $\mathbf{250}$; ou $\lambda_v = 20T-100$ p/ $10\text{--}20^\circ\text{C}$) e <span class="hl-yellow">$T_d \in \mathbf{[3, 6]\text{ dias}}$</span>. <em>(Justificativa: $T_d &lt; 3\text{ d}$ causa lavagem das metanogênicas; $T_d &gt; 6\text{ d}$ cria algas/OD que é letal às metanogênicas!)</em>. Adotar profundidade <strong>$H = 3\text{ a }5\text{ m}$ ($4\text{ m}$)</strong> p/ impedir luz, achar $A_{1/2} = V/H$, relação $L/B = 1\text{ a }3$, e checar $\lambda_s \in [1000, 2000]\text{ kg/(ha}\cdot\text{d)}$ (evitar odor). <strong>Eficiência LA adotada pela professora: 50% ($T\le 20^\circ\text{C}$) a 60% ($T&gt;20^\circ\text{C}$) $\implies$ saem $W_{\text{out,LA}} = \mathbf{624,5\text{ kg DBO/d}}$!</strong>
+            <br><code>Passo 2 — Lagoa Facultativa Secundária (Ex.2):</code> Recebe $W_{\text{in,LF}} = 624,5\text{ kg/d}$. Determinar $\lambda_s$ por McGarry ($0,67(20T-60) \approx 228\text{ kg/ha.d}$) ou faixa de Kawai p/ LF secundária ($\mathbf{50\text{ a }170\text{ kg/ha.d}}$, ex: $150\text{ kg/ha.d}$, onde $\lambda_{\text{rem}} = 0,7702\lambda_{\text{aplic}} - 5,4188$). Calcular $A_{1/2} = W_{\text{in,LF}} / \lambda_s$. Adotar <strong>$H = 1,5\text{ m}$</strong> (LF primária: $1,8\text{ m}$; mín. $&gt;0,60\text{ m}$ p/ evitar vegetação/mosquitos) e $L/B = 6:1$. Checar $T_d = V/Q \in [15, 45]\text{ d}$.
+            <br><code>Passo 3 — Lagoa de Maturação (Ex.3):</code> Polimento terciário p/ remover patógenos/CF ($90\text{--}99,99\%$; exige $\text{DBO}_{\text{entrada}} &lt; 75\text{ mg/L}$). Adotar lagoa rasa <span class="hl-yellow">$H = \mathbf{0,8\text{ a }1,2\text{ m}}$ ($1,0\text{ m}$)</span> (maximiza penetração UV solar bactericida e eleva pH/OD) e <strong>$T_d = 7\text{ dias}$</strong> (ou 2 a 3 lagoas em série com $T_d \ge 3\text{ d}$ cada). Calcular $V_{\text{LM}} = Q \cdot T_d$, $A_{1/2} = V/H$ e o número final de coliformes $N_e$ pela equação em série ($N_i = 4\cdot 10^7\text{ CF/100mL}$).
+          </li>
         </ul>
       </div>
 
-      <!-- QUADRANTE 8 (VERSO INFERIOR DIREITO): GUIA DE DIAGNÓSTICO, PROBLEMAS & RESUMO DOS EXERCÍCIOS -->
+      <!-- QUADRANTE 7: WETLANDS CONSTRUÍDAS (FSSH, FSSV & HÍBRIDO) -->
       <div class="a4-quad">
         <div class="a4-quad-title">
-          <span>Q8. DIAGNÓSTICO DE PROBLEMAS, JUSTIFICATIVAS & DADOS DOS EXERCÍCIOS</span>
-          <span>Verso • Inf. Dir.</span>
+          <span>Q7. WETLANDS CONSTRUÍDAS (JARDINS FILTRANTES — FSSH, FSSV & NBR 17076)</span>
+          <span>Verso • Q7</span>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Sintoma / Pergunta de Prova</th>
-              <th>Diagnóstico Técnico & Justificativa que Vale Nota</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Por que $v_h \in [0,25; 0,40]\text{ m/s}$ no Desarenador?</strong></td><td>Se $v_h &lt; 0,25\text{ m/s}$, sedimenta matéria orgânica junto com a areia (gera mau cheiro e areia suja); se $v_h &gt; 0,40\text{ m/s}$, a corrente arrasta a areia ($\ge 0,2\text{ mm}$), desgastando bombas e assoreando reatores. Controla-se com Parshall + degrau $z$.</td></tr>
-            <tr><td><strong>Por que $\theta_H \in [1\text{h}; 3\text{h}]$ no Decantador Primário?</strong></td><td>Se $\theta_H(Q_{\text{máx}}) &lt; 1\text{ h}$, não há tempo para a sedimentação floculenta; se $\theta_H(Q_{\text{méd}}) &gt; 3\text{ h}$, o lodo entra em decomposição anaeróbia/septicidade no fundo, liberando gases que flotam o lodo e geram forte odor.</td></tr>
-            <tr><td><strong>Mau cheiro ($\text{H}_2\text{S}$) em Lagoa Anaeróbia ou UASB</strong></td><td>Sobrecarga orgânica ($\lambda_v &gt; 400\text{ g/m}^3\text{.d}$ ou $\lambda_s &gt; 2000\text{ kg/ha.d}$) acumula ácidos voláteis, derruba o pH ($&lt;6,0$), inibe as metanogênicas e favorece bactérias redutoras de sulfato ($\text{SO}_4^{2-} \to \text{H}_2\text{S}$).</td></tr>
-            <tr><td><strong>Queda de OD e odor em Lagoa Facultativa</strong></td><td>Sobrecarga acima do limite de McGarry &amp; Pescod ($\lambda_s &gt; 20T-60$), dias nublados ou excesso de SST bloqueando a luz: quebra a simbiose algas-bactérias (consumo heterotrófico de $\text{O}_2$ supera a fotossíntese).</td></tr>
-            <tr><td><strong>Arraste de lodo / sólidos no efluente do UASB</strong></td><td>Velocidade ascensional excessiva ($v_{\text{asc}} &gt; 0,7 / 1,2\text{ m/h}$), velocidade alta nas fendas ($v_p &gt; 2,5 / 4,0\text{ m/h}$ impedindo o retorno do lodo decantado) ou falha no trespasse ($&lt;15\text{ cm}$) deixando gás turbulento entrar no decantador.</td></tr>
-            <tr><td><strong>Intumescimento (<em>bulking</em>) ou lodo flotando no LA</strong></td><td><em>Bulking:</em> bactérias filamentosas por baixo OD ou baixo $A/M$ $\to$ corrigir com <strong>Seletor Anóxico</strong> ($A/M \ge 3$). <em>Flotação no dec. secundário:</em> desnitrificação indesejada no fundo ($\text{NO}_3^- \to \text{N}_2$ gasoso arrasta flocos).</td></tr>
-            <tr><td><strong>Colmatação (entupimento) em Wetland FSSH</strong></td><td>Falta de pré-tratamento (TS), excesso de SST ou carga na seção transversal $B\times h &gt; 250\text{ g DBO}/(\text{m}^2\cdot\text{d)}$, causando escoamento superficial e curto-circuito.</td></tr>
-          </tbody>
-        </table>
-        <div class="a4-formula" style="margin-top:2px;">
-          <strong>Números-Chave do Caso Municipal dos Slides ($P_i=15.000\text{ hab}$, $q=160\text{ L/hab.d}$, $r=2\%$, $\text{DBO}=350\text{ mg/L}$, $\text{SST}=1040\text{ mg/L}$):</strong><br>
-          • <strong>1ª Etapa (0 anos, 15.000 hab):</strong> $\bar{Q}=27,8\text{ L/s}$; $Q_{\text{máx}}=50,0\text{ L/s}$; $Q_{\text{hor}}=41,7\text{ L/s}$; $Q_{\text{mín}}=13,9\text{ L/s}$.<br>
-          • <strong>2ª Etapa (10 anos, 18.300 hab):</strong> $\bar{Q}=33,9\text{ L/s}$; $Q_{\text{máx}}=61,0\text{ L/s}$; $Q_{\text{hor}}=50,9\text{ L/s}$; $Q_{\text{mín}}=17,0\text{ L/s}$.<br>
-          • <strong>3ª Etapa (20 anos, 22.300 hab):</strong> $\bar{Q}=\mathbf{41,3\text{ L/s}}$ ($148,68\text{ m}^3/\text{h} = 3568,3\text{ m}^3/\text{d}$); $Q_{\text{máx}}=\mathbf{74,3\text{ L/s}}$ ($267,48\text{ m}^3/\text{h} = 6419,5\text{ m}^3/\text{d}$); $Q_{\text{hor}}=\mathbf{62,0\text{ L/s}}$ ($5356,8\text{ m}^3/\text{d}$); $Q_{\text{mín}}=\mathbf{20,6\text{ L/s}}$. Carga bruta: $W_{\text{in}} = \mathbf{1249\text{ kg DBO/d}}$ (após LA 50%: $624,5\text{ kg/d}$; após DP 30%: $874,2\text{ kg/d}$, $S_a=245\text{ mg/L}$).<br>
-          <strong>Caso Condomínio (10 casas $\times$ 4 hab = 40 hab, alto padrão $q=160$, $T=12^\circ\text{C}$, 2 anos):</strong> $Q = 6400\text{ L/d}$; TS: $T_d=0,67\text{d}, K=105 \implies V_{\text{TS}} = \mathbf{9.488\text{ L}}$ ($9,5\text{ m}^3$). Filtro An.: $T_d=0,83\text{d}, I_v=1,6 \implies V_u = \mathbf{8.499\text{ L}}$. Wetland FSSH: $C_0=227,5\text{ mg/L}, K_{12}=0,69\text{ d}^{-1} \implies A_h \approx \mathbf{94\text{ a }100\text{ m}^2}$.
+        <div class="a4-formula">
+          <strong>📐 Fórmulas com Nomes:</strong><br>
+          • <strong>1. Área Wetland Subsuperficial Horizontal (FSSH — Metcalf &amp; Eddy):</strong> <span class="hl-yellow">$A_h = \frac{Q \cdot (\ln C_0 - \ln C_e)}{K_T \cdot p \cdot n}\text{ [m}^2]$</span> &nbsp;com $K_T = K_{20}\cdot(1,06)^{(T-20)}$ ($K_{20} = \mathbf{1,1\text{ a }1,9\text{ d}^{-1}}$)<br>
+          • <strong>2. Área Wetland Fluxo Superficial (FS):</strong> $A_h = \frac{Q \cdot (\ln C_0 - \ln C_e)}{K_{\text{DBO}}}$ &nbsp;($K_{\text{DBO}} = 0,10\text{ d}^{-1}$ p/ secundário; $0,31\text{ d}^{-1}$ p/ terciário)<br>
+          • <strong>3. Tempo de Detenção Hidráulica Real ($\theta_H$) e Volume com Porosidade ($n$):</strong> <span class="hl-green">$\theta_H = \frac{L \cdot B \cdot h \cdot n}{Q}\text{ [dias]}$</span> &nbsp;e&nbsp; $\text{Vol}_{\text{tanque}} = \frac{Q \cdot \theta_H}{n}$<br>
+          • <strong>4. Wetland Fluxo Vertical (FSSV — Balanço de $\text{O}_2$ de Johansen &amp; Brix):</strong> $\text{OD}\text{ [kg O}_2/\text{d]} = 4,3\cdot(\text{kg NH}_4\text{-N/d}) + 1,0\cdot(\text{kg DBO}_5/\text{d}) \implies A = \frac{\text{OD}}{\text{SAD}}$ ($\text{SAD} &lt; 30\text{ g O}_2/(\text{m}^2\cdot\text{d)}$)
         </div>
+        <ul class="a4-list">
+          <li><strong>🎯 Variáveis Diretas NBR 17076/2024 ($Q \le 12.000\text{ L/d}$ e Carga $\le 3,80\text{ kg DBO/d}$):</strong>
+            <br>• <strong>Fluxo Subsuperficial Horizontal (WC-FSSH):</strong> Meio suporte: <strong>Brita nº 1</strong> ($n \approx 0,35\text{--}0,45$, adotar $0,40$) | Operação: <strong>Contínua</strong> (saturado/anóxico $\to$ desnitrifica!) | Profundidade: <strong>$p = h = 0,50\text{ a }0,90\text{ m}$</strong> (nível d'água ~10 cm abaixo do topo da brita) | <span class="hl-yellow">$\text{TAS}_{\text{org,sup}} = \mathbf{6\text{ a }15\text{ g DBO}/(\text{m}^2\cdot\text{d)}}$</span> | <span class="hl-red">$\text{TAS}_{\text{org,seção } (B\times h)} \le \mathbf{250\text{ g DBO}/(\text{m}^2\cdot\text{d)}}$</span> (evita colmatação!) | $\text{TAS}_{\text{hid}} = \mathbf{0,02\text{ a }0,08\text{ m}^3/(\text{m}^2\cdot\text{d)}}$ | Área específica Brasil: $\approx \mathbf{2,0\text{ m}^2/\text{hab}}$.
+            <br>• <strong>Fluxo Subsuperficial Vertical (WC-FSSV):</strong> Meio suporte: <strong>Areia</strong> | Operação: <strong>Intermitente por bateladas</strong> (oxigena os poros $\to$ nitrifica!) | Profundidade: <strong>$h = 0,70\text{ a }1,10\text{ m}$</strong> (até $1,5\text{ m}$) | <span class="hl-green">$\text{TAS}_{\text{org,sup}} = \mathbf{10\text{ a }20\text{ g DBO}/(\text{m}^2\cdot\text{d)}}$</span> | $\text{TAS}_{\text{hid}} = \mathbf{0,015\text{ a }0,12\text{ m}^3/(\text{m}^2\cdot\text{d)}}$ | Área Brasil: $\mathbf{0,8\text{ a }1,5\text{ m}^2/\text{hab}}$ (típ. $1,2$).
+          </li>
+          <li><strong>🧭 Roteiro Passo a Passo do Exercício TS + Wetland FSSH (Condomínio 40 hab, $Q = 6,4\text{ m}^3/\text{d}$, $T = 12^\circ\text{C}$):</strong>
+            <br><code>Passo 1 (Saída do TS):</code> Descontar ~35% de DBO no Tanque Séptico: $C_0 = 350 \times (1 - 0,35) = \mathbf{227,5\text{ mg/L}}$ ($W = 6,4 \times 0,2275 = \mathbf{1,456\text{ kg DBO/d}} \le 3,8\text{ kg/d}$).
+            <br><code>Passo 2 (Cálculo de K_T e Área Ah):</code> Com $K_{20} = 1,10\text{ d}^{-1}$, a $12^\circ\text{C}$: $K_{12} = 1,10(1,06)^{(12-20)} = \mathbf{0,690\text{ d}^{-1}}$. Adotando $p = 0,50\text{ m}$, $n = 0,40$ e meta $C_e = 30\text{ mg/L}$: $A_h = \frac{6,4(\ln 227,5 - \ln 30)}{0,690 \times 0,50 \times 0,40} = \mathbf{93,9\text{ m}^2}$ (Adota-se <strong>$A_h = 100\text{ m}^2$</strong> para ter $\text{TAS}_{\text{org}} = 1456/100 = 14,56 \le 15\text{ g}/(\text{m}^2\cdot\text{d)}$ e $\text{TAS}_{\text{hid}} = 0,064\text{ m/d}$, OK!).
+            <br><code>Passo 3 (Geometria, Seção Transversal e TDH):</code> Relação $L:B \ge 2:1$ (ex: $B = 7,5\text{ m}$, $L = 13,5\text{ m}$, $h = 0,80\text{ m} \implies A_{\text{transv}} = 7,5\times 0,8 = 6,0\text{ m}^2 \implies \text{TAS}_{\text{seção}} = 1456/6 = \mathbf{242,7 \le 250\text{ g}/(\text{m}^2\cdot\text{d)}}$, evitando entupimento!). $\theta_H = \frac{100 \times 0,60 \times 0,40}{6,4} = \mathbf{3,75\text{ dias}}$ ($\ge 2,5\text{ d}$). Impermeabilizar base (PEAD $1\text{ mm}$), fundo $i = 1\%$, tubos $\text{DN }100\text{ mm}$ perfurados na entrada/saída.
+          </li>
+        </ul>
+      </div>
+
+      <!-- QUADRANTE 8: COLA DISCURSIVA — COMPARAÇÃO RÁPIDA, JUSTIFICATIVAS E DIAGNÓSTICO DE FALHAS -->
+      <div class="a4-quad">
+        <div class="a4-quad-title">
+          <span>Q8. RESPOSTAS PRONTAS: COMPARAÇÃO DE SISTEMAS & DIAGNÓSTICO DE PROBLEMAS</span>
+          <span>Verso • Q8</span>
+        </div>
+        <ul class="a4-list">
+          <li><strong>⚖️ Como Comparar e Escolher Sistemas na Prova (Dados Diretos de Von Sperling):</strong>
+            <br>• <strong>Lagoa Facultativa (LF):</strong> DBO $70\text{--}85\%$, CF $60\text{--}99\%$ | Área: <strong>$2,0\text{--}5,0\text{ m}^2/\text{hab}$ (muito alta!)</strong> | Potência: $\approx 0$. <em>Escolha quando:</em> há muita área barata, clima quente/ensolarado e busca-se operação simples sem energia.
+            <br>• <strong>Sistema Australiano (LA + LF + LM):</strong> DBO $70\text{--}90\%$, CF $99,99\%$ | Área: <strong>$1,5\text{--}3,5\text{ m}^2/\text{hab}$ (economiza 30% de área!)</strong> | Potência: $\approx 0$. <em>Ressalva:</em> exige $\ge 500\text{ m}$ de distância urbana pelo risco de odor na LA.
+            <br>• <strong>Reator UASB / RAFA:</strong> DBO $60\text{--}80\%$ (~70%) | Área: <strong>$0,05\text{--}0,10\text{ m}^2/\text{hab}$ (super compacto!)</strong> | Potência: $\approx 0$ (gera biogás $\text{CH}_4$: $70\text{--}90\%$ da DQO!) | Lodo: só $5\text{--}15\%$ da DQO e já sai estabilizado! <em>Limitação:</em> baixa remoção de N/P/CF $\to$ <strong>exige pós-tratamento</strong> (ex: UASB + Lodos Ativados, UASB + Filtro Biológico ou UASB + Lagoa/Wetland).
+            <br>• <strong>Lodos Ativados Convencional vs. Aeração Prolongada:</strong> Área mínima ($0,2\text{--}0,35\text{ m}^2/\text{hab}$), mas alto custo energético ($1,5\text{--}4,0\text{ W/hab}$) e operação complexa. <em>Convencional:</em> $85\text{--}93\%$ DBO, tem Decantador Primário e gera muito lodo instável (exige digestor). <em>Aeração Prolongada:</em> $93\text{--}98\%$ DBO, sem DP e lodo já sai estabilizado no próprio reator ($\theta_c &gt; 18\text{ d}$, respiração endógena).
+            <br>• <strong>Wetlands Construídas (FSSH vs. FSSV):</strong> Pós-tratamento ideal p/ pequeno/médio porte, zero energia, integração paisagística. <strong>Sistema Híbrido (FSSV $\to$ FSSH):</strong> o FSSV (intermitente/aeróbio) faz a <strong>nitrificação ($\text{NH}_4^+ \to \text{NO}_3^-$)</strong> e o FSSH (contínuo/anóxico) faz a <strong>desnitrificação ($\text{NO}_3^- \to \text{N}_2$)</strong>! Macrófitas fornecem $\text{O}_2$ pelas raízes (aerênquimas), fixam biofilme e evitam colmatação.
+          </li>
+          <li><strong>🩺 Diagnóstico de Problemas Operacionais (Sintoma $\to$ Causa Raiz $\to$ Solução):</strong>
+            <br>• <strong>Areia fétida ou passando p/ reatores no Desarenador:</strong> Se $v_h &lt; 0,25\text{ m/s}$, sedimenta matéria orgânica junto com a areia (mau cheiro); se $v_h &gt; 0,40\text{ m/s}$, arrasta areia ($\ge 0,2\text{ mm}$). <em>Solução:</em> controlar nível com Calha Parshall + degrau $z$.
+            <br>• <strong>Lodo escuro flotando e mau cheiro no Decantador Primário:</strong> $\theta_H(Q_{\text{méd}}) &gt; 3\text{ h}$ ou atraso no descarte causa septicidade/fermentação anaeróbia no fundo (bolhas de gás levantam o lodo). <em>Solução:</em> manter $1\text{h} &lt; \theta_H &lt; 3\text{h}$ e descartar lodo com frequência.
+            <br>• <strong>Forte odor de ovo podre ($\text{H}_2\text{S}$) em Lagoa Anaeróbia ou UASB:</strong> Sobrecarga orgânica ($\lambda_v &gt; 400\text{ g/m}^3\text{.d}$ ou $\lambda_s &gt; 2000\text{ kg/ha.d}$) acumula ácidos voláteis, derruba o pH ($&lt;6,0$), inibe as arqueias metanogênicas e favorece as bactérias redutoras de sulfato ($\text{SO}_4^{2-} \to \text{H}_2\text{S}$).
+            <br>• <strong>Lagoa Facultativa ficando cinza/escura e sem OD de dia:</strong> Sobrecarga acima do limite de McGarry &amp; Pescod ($\lambda_s &gt; 20T-60$) ou sombreamento/SST bloqueando a luz solar $\to$ quebra a simbiose algas-bactérias (consumo heterotrófico supera a fotossíntese).
+            <br>• <strong>Perda/arraste de manta de lodo no efluente do UASB:</strong> Velocidade ascensional alta ($v_{\text{asc}} &gt; 0,7/1,2\text{ m/h}$), velocidade alta nas fendas ($v_p &gt; 2,5/4,0\text{ m/h}$ impedindo o retorno do lodo decantado) ou trespasse $&lt;15\text{ cm}$ (biogás entra no decantador causando turbulência).
+            <br>• <strong>Lodo não decanta (<em>bulking</em>) ou flota no Decantador Secundário (Lodos Ativados):</strong> <em>Bulking filamentoso:</em> excesso de bactérias filamentosas por baixo OD ou baixo $A/M \to$ instalar <strong>Seletor Anóxico</strong> a montante ($A/M \ge 3$). <em>Flotação de placas de lodo:</em> desnitrificação indesejada no fundo do decantador secundário ($\text{NO}_3^- \to \text{N}_2$ gasoso arrasta os flocos).
+            <br>• <strong>Colmatação (entupimento e escoamento superficial) em Wetland FSSH:</strong> Falta de pré-tratamento (TS) ou taxa orgânica na seção transversal $B\times h &gt; 250\text{ g DBO}/(\text{m}^2\cdot\text{d)} \to$ aumentar largura $B$ e profundidade $h$.
+          </li>
+        </ul>
       </div>
 
     </div>
